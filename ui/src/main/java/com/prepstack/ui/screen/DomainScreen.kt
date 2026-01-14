@@ -78,7 +78,10 @@ fun DomainScreen(
                     }
                     
                     // Banner Ad at bottom
-                    BannerAdView()
+                    BannerAdView(
+                        adUnitId = com.prepstack.ads.AdManager.HOME_BANNER_AD_ID,
+                        placement = "home_screen_bottom"
+                    )
                 }
                 
                 is DomainUiState.Error -> {

@@ -162,6 +162,7 @@ fun QuizContent(
         for (i in 1..3) {
             if (!isAdLoaded) {
                 adManager.loadRewardedAd(
+                    adUnitId = AdManager.QUIZ_REWARDED_AD_ID,
                     onAdLoaded = { 
                         isAdLoaded = true
                         println("✅ Rewarded ad loaded successfully")
@@ -339,6 +340,7 @@ fun QuizContent(
                                 // Show rewarded ad before completing
                                 adManager.showRewardedAd(
                                     activity = it,
+                                    adUnitId = AdManager.QUIZ_REWARDED_AD_ID,
                                     onRewarded = {
                                         println("🎁 User earned reward from ad")
                                         // Give any in-app reward here if needed
@@ -594,7 +596,9 @@ fun QuizContent(
             )
             
             // Banner Ad
-            BannerAdView()
+            BannerAdView(
+                placement = "quiz_screen_bottom"
+            )
         }
     }
 }

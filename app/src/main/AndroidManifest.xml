@@ -20,7 +20,12 @@
         <!-- AdMob App ID - Replace with your actual AdMob App ID -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-7931408789378206~4225990276"/>
+            
+        <!-- Firebase Crashlytics Configuration -->
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="${crashlyticsCollectionEnabled}" />
         
         <activity
             android:name=".MainActivity"
