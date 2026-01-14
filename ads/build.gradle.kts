@@ -36,6 +36,9 @@ dependencies {
     
     implementation(libs.play.services.ads)
     implementation(libs.androidx.compose.foundation.layout)
+    
+    // Add dependency to core module for AnalyticsLogger
+    implementation(project(":core"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

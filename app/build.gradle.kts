@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -19,12 +21,19 @@ android {
     }
 
     buildTypes {
+        debug {
+            // Disable collection in debug builds
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = "false"
+        }
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // Enable collection in release builds
+            manifestPlaceholders["crashlyticsCollectionEnabled"] = "true"
         }
     }
     compileOptions {
@@ -37,6 +46,9 @@ android {
     buildFeatures {
         compose = true
     }
+    
+    // Firebase Crashlytics configuration is controlled through the
+    // Firebase Gradle plugin and manifest placeholders
 }
 
 dependencies {
@@ -47,7 +59,11 @@ dependencies {
     implementation(project(":ui"))
     implementation(project(":bookmarks"))
     implementation(project(":ads"))
-
+    
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
