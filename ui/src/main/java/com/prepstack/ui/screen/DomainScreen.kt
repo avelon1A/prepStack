@@ -79,7 +79,7 @@ fun DomainScreen(
                     
                     // Banner Ad at bottom
                     BannerAdView(
-                        adUnitId = com.prepstack.ads.AdManager.HOME_BANNER_AD_ID,
+                        adUnitId = com.prepstack.ads.AdManager.getBannerAdId(),
                         placement = "home_screen_bottom"
                     )
                 }

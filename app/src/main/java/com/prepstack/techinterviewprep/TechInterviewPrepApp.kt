@@ -73,8 +73,8 @@ class TechInterviewPrepApp : Application() {
             interviewRepository.loadData()
             
             // Preload ads
-            adManager.loadInterstitialAd()
-            adManager.loadRewardedAd()
+            adManager.loadInterstitialAd(AdManager.getInterstitialAdId())
+            adManager.loadRewardedAd(AdManager.getRewardedAdId())
         }
     }
     

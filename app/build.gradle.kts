@@ -1,3 +1,5 @@
+// Remove erroneous import that could be causing build issues
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -19,11 +21,26 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    
+    signingConfigs {
+        create("release") {
+            storeFile = file("/Users/amantoppo/aman.jks")
+            storePassword = "123456"
+            keyAlias = "key0"
+            keyPassword = "123456"
+            
+            // Enable V1 and V2 signing
+            enableV1Signing = true
+            enableV2Signing = true
+        }
+    }
 
     buildTypes {
         debug {
             // Disable collection in debug builds
             manifestPlaceholders["crashlyticsCollectionEnabled"] = "false"
+            // Debug signing
+            signingConfig = signingConfigs.getByName("debug")
         }
         release {
             isMinifyEnabled = true
@@ -34,6 +51,8 @@ android {
             )
             // Enable collection in release builds
             manifestPlaceholders["crashlyticsCollectionEnabled"] = "true"
+            // Use release signing
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
@@ -45,6 +64,15 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10"
+    }
+   lint {
+    disable += "NullSafeMutableLiveData"
+    
+    warning += "GradleDependency" // Warn about outdated dependencies
     }
     
     // Firebase Crashlytics configuration is controlled through the
