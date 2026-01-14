@@ -30,7 +30,7 @@ jobs:
 
       - name: Upload Lint reports
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lint-reports
           path: '**/build/reports/lint-results-*.html'
@@ -57,7 +57,7 @@ jobs:
 
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: unit-test-results
           path: '**/build/reports/tests/'
@@ -84,7 +84,7 @@ jobs:
         run: ./gradlew assembleDebug
 
       - name: Upload debug APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: debug-apk
           path: app/build/outputs/apk/debug/*.apk
