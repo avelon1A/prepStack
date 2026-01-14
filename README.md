@@ -1,5 +1,8 @@
 # Tech Interview Prep 🚀
 
+[![Android CI/CD](https://github.com/yourusername/tech-interview-prep/actions/workflows/android-ci.yml/badge.svg)](https://github.com/yourusername/tech-interview-prep/actions/workflows/android-ci.yml)
+[![Code Quality](https://github.com/yourusername/tech-interview-prep/actions/workflows/code-quality.yml/badge.svg)](https://github.com/yourusername/tech-interview-prep/actions/workflows/code-quality.yml)
+
 A comprehensive Android application for technical interview preparation covering multiple domains: Android, Backend, Java, Kotlin, C++, OOPS, DSA, SQL, and HR.
 
 ## 📱 Features
@@ -292,6 +295,45 @@ Located in `src/androidTest/`:
 - [ ] Repository implementations
 - [ ] ViewModels
 - [ ] Compose UI tests
+
+## 🔄 CI/CD Pipeline
+
+This project uses GitHub Actions for continuous integration and delivery:
+
+### Workflows
+
+1. **Android CI/CD** (`android-ci.yml`)
+   - 🔍 **Lint**: Checks for code quality issues
+   - 🧪 **Unit Tests**: Runs all unit tests
+   - 📦 **Build**: Builds debug APK
+   - 🚀 **Release**: Creates release APK and GitHub release (on main branch only)
+
+2. **Code Quality** (`code-quality.yml`)
+   - 🧹 **ktlint**: Enforces Kotlin style guide
+   - 🔎 **detekt**: Static code analysis for Kotlin
+   - 📊 **Dependency Updates**: Checks for outdated dependencies
+
+### How It Works
+
+1. On every push or pull request to main:
+   - Code is linted and tested
+   - Debug APK is built and uploaded as artifact
+
+2. When code is merged to main:
+   - Release APK is built, signed, and published as a GitHub Release
+   - Version is automatically generated based on date and commit hash
+
+### Local Verification
+
+Run checks locally before pushing:
+
+```bash
+# Run all checks
+./gradlew check
+
+# Build debug APK
+./gradlew assembleDebug
+```
 
 ## 🔐 ProGuard Rules
 
