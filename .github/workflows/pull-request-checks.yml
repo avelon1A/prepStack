@@ -1,0 +1,86 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pr_validation:
+    name: PR Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for proper diff
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
+
+      - name: Check PR size
+        run: |
+          git diff --stat origin/main | tail -n1 | awk '{print $1 " files changed, " $4 " insertions(+), " $6 " deletions(-)"}'
+          
+          # Get number of files changed
+          FILES_CHANGED=$(git diff --name-only --diff-filter=ACMRT origin/main | wc -l)
+          
+          # Optional: Warn if PR is large
+          if [ $FILES_CHANGED -gt 20 ]; then
+            echo "::warning::This PR modifies $FILES_CHANGED files. Consider breaking it into smaller PRs."
+          fi
+
+      - name: Check forbidden patterns
+        run: |
+          # Check for common sensitive patterns
+          ! git diff origin/main | grep -E "API_KEY|SECRET|PASSWORD|TOKEN"
+          
+          # Check for large binary files
+          LARGE_FILES=$(git diff --name-only --diff-filter=ACMRT origin/main | xargs -I{} bash -c 'if [[ -f "{}" && $(du -k "{}" | cut -f1) -gt 500 ]]; then echo "{}"; fi')
+          if [ -n "$LARGE_FILES" ]; then
+            echo "::warning::Large files detected: $LARGE_FILES"
+          fi
+
+      - name: Run quick checks
+        run: ./gradlew lintDebug testDebugUnitTest --no-daemon
+
+      - name: Comment PR with build result
+        uses: actions/github-script@v6
+        if: always()
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            try {
+              let body = '## Build Results\n\n';
+              
+              // Check job status
+              if (process.env.JOB_STATUS === 'success') {
+                body += '✅ All checks passed!\n\n';
+              } else {
+                body += '❌ Some checks failed. Please review the logs.\n\n';
+              }
+              
+              // Add details about the checks
+              body += '### Summary\n\n';
+              body += '- Lint: ' + (process.env.JOB_STATUS === 'success' ? '✅ Passed' : '❌ Failed') + '\n';
+              body += '- Unit Tests: ' + (process.env.JOB_STATUS === 'success' ? '✅ Passed' : '❌ Failed') + '\n';
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              });
+            } catch (error) {
+              console.log(error);
+            }
+        env:
+          JOB_STATUS: ${{ job.status }}
