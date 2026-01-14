@@ -32,8 +32,9 @@ class AdManager(private val context: Context) {
     
     /**
      * Load interstitial ad
+     * In release builds, use production ad IDs by default
      */
-    fun loadInterstitialAd(adUnitId: String = TEST_INTERSTITIAL_AD_ID) {
+    fun loadInterstitialAd(adUnitId: String) {
         val adRequest = AdRequest.Builder().build()
         
         // Log ad request event
@@ -70,7 +71,7 @@ class AdManager(private val context: Context) {
     /**
      * Show interstitial ad if loaded
      */
-    fun showInterstitialAd(activity: Activity, onAdClosed: () -> Unit = {}) {
+    fun showInterstitialAd(activity: Activity, adUnitId: String, onAdClosed: () -> Unit = {}) {
         interstitialAd?.let { ad ->
             // Log ad show attempt
             AnalyticsLogger.logEvent("interstitial_ad_show_attempt")
@@ -80,7 +81,7 @@ class AdManager(private val context: Context) {
                     interstitialAd = null
                     // Log ad dismissed
                     AnalyticsLogger.logEvent("interstitial_ad_dismissed")
-                    loadInterstitialAd() // Preload next ad
+                    loadInterstitialAd(getInterstitialAdId()) // Preload next ad
                     onAdClosed()
                 }
                 
@@ -114,7 +115,7 @@ class AdManager(private val context: Context) {
         interactionCount++
         if (interactionCount >= threshold) {
             interactionCount = 0
-            showInterstitialAd(activity, onAdClosed)
+            showInterstitialAd(activity, getInterstitialAdId(), onAdClosed)
         } else {
             onAdClosed()
         }
@@ -124,7 +125,7 @@ class AdManager(private val context: Context) {
      * Load rewarded ad with callbacks for tracking load status
      */
     fun loadRewardedAd(
-        adUnitId: String = TEST_REWARDED_AD_ID,
+        adUnitId: String,
         onAdLoaded: () -> Unit = {},
         onAdFailedToLoad: (String) -> Unit = {}
     ) {
@@ -177,7 +178,7 @@ class AdManager(private val context: Context) {
      */
     fun showRewardedAd(
         activity: Activity,
-        adUnitId: String = TEST_REWARDED_AD_ID, // Default to test ID if none provided
+        adUnitId: String,
         onRewarded: () -> Unit,
         onAdClosed: () -> Unit = {}
     ) {
@@ -280,10 +281,32 @@ class AdManager(private val context: Context) {
         // Production Ad Unit IDs
         const val HOME_BANNER_AD_ID = "ca-app-pub-7931408789378206/4179750632"
         const val QUIZ_REWARDED_AD_ID = "ca-app-pub-7931408789378206/4729403210"
+        const val INTERSTITIAL_AD_ID = "ca-app-pub-7931408789378206/5105819497" // Replace with your actual interstitial ad ID
         
         // Test Ad Unit IDs (for development only)
-        const val TEST_BANNER_AD_ID = "ca-app-pub-3940256099942544/6300978111"
-        const val TEST_INTERSTITIAL_AD_ID = "ca-app-pub-3940256099942544/1033173712"
-        const val TEST_REWARDED_AD_ID = "ca-app-pub-3940256099942544/5224354917"
+        private const val TEST_BANNER_AD_ID = "ca-app-pub-3940256099942544/6300978111"
+        private const val TEST_INTERSTITIAL_AD_ID = "ca-app-pub-3940256099942544/1033173712"
+        private const val TEST_REWARDED_AD_ID = "ca-app-pub-3940256099942544/5224354917"
+        
+        /**
+         * Get the appropriate banner ad ID based on build type
+         */
+        fun getBannerAdId(): String {
+            return if (BuildConfig.USE_TEST_ADS) TEST_BANNER_AD_ID else HOME_BANNER_AD_ID
+        }
+        
+        /**
+         * Get the appropriate interstitial ad ID based on build type
+         */
+        fun getInterstitialAdId(): String {
+            return if (BuildConfig.USE_TEST_ADS) TEST_INTERSTITIAL_AD_ID else INTERSTITIAL_AD_ID
+        }
+        
+        /**
+         * Get the appropriate rewarded ad ID based on build type
+         */
+        fun getRewardedAdId(): String {
+            return if (BuildConfig.USE_TEST_ADS) TEST_REWARDED_AD_ID else QUIZ_REWARDED_AD_ID
+        }
     }
 }

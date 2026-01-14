@@ -21,7 +21,7 @@ import com.prepstack.core.util.AnalyticsLogger
 @Composable
 fun BannerAdView(
     modifier: Modifier = Modifier,
-    adUnitId: String = AdManager.TEST_BANNER_AD_ID,
+    adUnitId: String = AdManager.getBannerAdId(), // Use helper method to get the correct ID based on build type
     placement: String = "default"
 ) {
     val context = LocalContext.current

@@ -12,6 +12,15 @@ android {
         minSdk = 24
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    
+    buildTypes {
+        debug {
+            buildConfigField("Boolean", "USE_TEST_ADS", "true")
+        }
+        release {
+            buildConfigField("Boolean", "USE_TEST_ADS", "false")
+        }
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -22,6 +31,11 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+    
+    lint {
+        disable += "NullSafeMutableLiveData"
     }
 }
 
