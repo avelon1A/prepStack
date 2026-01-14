@@ -1,0 +1,140 @@
+{
+  "topicId": "android_basics",
+  "quizQuestions": [
+    {
+      "id": "android_quiz_1",
+      "questionText": "Which component is used to perform background operations in Android?",
+      "type": "MCQ",
+      "options": ["Activity", "Service", "Broadcast Receiver", "Content Provider"],
+      "correctAnswer": "Service",
+      "explanation": "Services can run in the background without user interface, performing background tasks.",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_quiz_2",
+      "questionText": "What is the purpose of AndroidManifest.xml?",
+      "type": "MCQ",
+      "options": ["It defines app's UI layouts", "It declares app components and permissions", "It stores app data", "It handles network requests"],
+      "correctAnswer": "It declares app components and permissions",
+      "explanation": "AndroidManifest.xml provides essential information about your app to the Android system, such as components and permissions.",
+      "difficulty": "EASY"
+    },
+    {
+      "id": "android_quiz_3",
+      "questionText": "What is the primary purpose of ViewModel in Android?",
+      "type": "MCQ",
+      "options": ["To handle database operations", "To manage UI-related data in a lifecycle-conscious way", "To create custom views", "To handle network requests"],
+      "correctAnswer": "To manage UI-related data in a lifecycle-conscious way",
+      "explanation": "ViewModel allows UI data to survive configuration changes such as screen rotations.",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_quiz_4",
+      "questionText": "Which lifecycle method is called when an Activity becomes visible?",
+      "type": "MCQ",
+      "options": ["onCreate()", "onStart()", "onResume()", "onPause()"],
+      "correctAnswer": "onStart()",
+      "explanation": "onStart() is called when the activity becomes visible to the user.",
+      "difficulty": "EASY"
+    },
+    {
+      "id": "android_quiz_5",
+      "questionText": "What is an Intent in Android?",
+      "type": "MCQ",
+      "options": ["A messaging object for UI updates", "A messaging object to request an action from another component", "A database query object", "A network request object"],
+      "correctAnswer": "A messaging object to request an action from another component",
+      "explanation": "Intents are messaging objects you can use to request an action from another app component.",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_quiz_6",
+      "questionText": "What is a Fragment in Android?",
+      "type": "MCQ",
+      "options": ["A reusable portion of your app's UI", "A type of Activity", "A database table", "A network connection"],
+      "correctAnswer": "A reusable portion of your app's UI",
+      "explanation": "A Fragment represents a portion of user interface in your app, which can be reused in different activities.",
+      "difficulty": "EASY"
+    },
+    {
+      "id": "android_quiz_7",
+      "questionText": "What is LiveData in Android Architecture Components?",
+      "type": "MCQ",
+      "options": ["A real-time database", "An observable data holder class that is lifecycle-aware", "A network library", "A UI component"],
+      "correctAnswer": "An observable data holder class that is lifecycle-aware",
+      "explanation": "LiveData is lifecycle-aware and only updates app component observers that are in an active lifecycle state.",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_quiz_8",
+      "questionText": "What is the purpose of RecyclerView?",
+      "type": "MCQ",
+      "options": ["To recycle unused memory", "To efficiently display large lists of data", "To manage app lifecycle", "To handle background tasks"],
+      "correctAnswer": "To efficiently display large lists of data",
+      "explanation": "RecyclerView efficiently displays large lists of data by recycling views, improving performance.",
+      "difficulty": "EASY"
+    },
+    {
+      "id": "android_quiz_9",
+      "questionText": "Which method is used to inflate a layout in a Fragment?",
+      "type": "MCQ",
+      "options": ["onCreate()", "onCreateView()", "onViewCreated()", "onAttach()"],
+      "correctAnswer": "onCreateView()",
+      "explanation": "onCreateView() is the proper method to inflate and provide a layout for a fragment.",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_quiz_10",
+      "questionText": "What does 'suspend' keyword indicate in Kotlin?",
+      "type": "MCQ",
+      "options": ["The function runs on main thread", "The function can be paused and resumed", "The function is deprecated", "The function is private"],
+      "correctAnswer": "The function can be paused and resumed",
+      "explanation": "The suspend keyword marks a function as a coroutine, allowing it to be paused and resumed.",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_quiz_11",
+      "questionText": "What is the difference between finish() and finishAffinity()?",
+      "type": "MCQ",
+      "options": ["No difference", "finish() closes current activity, finishAffinity() closes all activities in the same task", "finishAffinity() closes only the current activity", "finish() closes all activities"],
+      "correctAnswer": "finish() closes current activity, finishAffinity() closes all activities in the same task",
+      "explanation": "finishAffinity() is used to close all activities in the same task, not just the current one.",
+      "difficulty": "HARD"
+    },
+    {
+      "id": "android_quiz_12",
+      "questionText": "What is the purpose of Context in Android?",
+      "type": "MCQ",
+      "options": ["To store app data", "To provide access to app-level resources and services", "To handle UI events", "To manage network connections"],
+      "correctAnswer": "To provide access to app-level resources and services",
+      "explanation": "Context provides access to resources, databases, preferences, and more.",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_quiz_13",
+      "questionText": "Which storage option is best for storing small key-value pairs?",
+      "type": "MCQ",
+      "options": ["SQLite Database", "SharedPreferences", "Internal Storage", "External Storage"],
+      "correctAnswer": "SharedPreferences",
+      "explanation": "SharedPreferences are lightweight and ideal for storing app settings and preferences.",
+      "difficulty": "EASY"
+    },
+    {
+      "id": "android_quiz_14",
+      "questionText": "What is the difference between margin and padding?",
+      "type": "MCQ",
+      "options": ["No difference", "Margin is outside the view, padding is inside", "Padding is outside the view, margin is inside", "Both are the same"],
+      "correctAnswer": "Margin is outside the view, padding is inside",
+      "explanation": "Margin creates space outside the view border, padding creates space inside the border around the content.",
+      "difficulty": "EASY"
+    },
+    {
+      "id": "android_quiz_15",
+      "questionText": "What is the purpose of the Adapter pattern in Android?",
+      "type": "MCQ",
+      "options": ["To handle network requests", "To bridge data and UI components like ListView/RecyclerView", "To manage app lifecycle", "To store data"],
+      "correctAnswer": "To bridge data and UI components like ListView/RecyclerView",
+      "explanation": "The Adapter pattern is used to bridge between UI components and data sources, especially in list views.",
+      "difficulty": "MEDIUM"
+    }
+  ]
+}

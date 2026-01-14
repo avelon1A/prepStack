@@ -1,0 +1,1 @@
+{"topicId":"streams","quizQuestions":[{"id":"streams_quiz_1","questionText":"Which method creates a Stream from a List?","type":"MCQ","options":["collect()","stream()","listOf()","flow()"],"correctAnswer":"stream()","explanation":"List.stream() returns a Stream.","difficulty":"EASY"}]}

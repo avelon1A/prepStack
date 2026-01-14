@@ -1,0 +1,14 @@
+{
+  "topicId": "sql_aggregations",
+  "quizQuestions": [
+    {"id": "sql_agg_quiz_1", "questionText": "Which SQL aggregate function calculates the average value of a numeric column?", "type": "MCQ", "options": ["AVG()", "MEAN()", "AVERAGE()", "SUM() / COUNT()"], "correctAnswer": "AVG()", "explanation": "AVG() is the standard SQL function for calculating the arithmetic mean (average) of values in a numeric column, ignoring NULL values.", "difficulty": "EASY"},
+    
+    {"id": "sql_agg_quiz_2", "questionText": "What happens if you use COUNT(column_name) when the column contains NULL values?", "type": "MCQ", "options": ["NULL values are not counted", "NULL values are counted as 0", "NULL values cause an error", "NULL values are counted as NULL"], "correctAnswer": "NULL values are not counted", "explanation": "COUNT(column_name) counts only non-NULL values in the specified column. To count all rows including those with NULL values, use COUNT(*).", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_agg_quiz_3", "questionText": "Which clause is used to filter groups in a GROUP BY query?", "type": "MCQ", "options": ["HAVING", "WHERE", "FILTER", "GROUP FILTER"], "correctAnswer": "HAVING", "explanation": "The HAVING clause is specifically designed to filter groups after the GROUP BY operation has been performed, unlike WHERE which filters individual rows before grouping.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_agg_quiz_4", "questionText": "What is the result of the following query: SELECT MAX(salary) - MIN(salary) FROM employees;", "type": "MCQ", "options": ["The difference between highest and lowest salary", "The average salary", "Two separate columns with max and min", "This query will produce an error"], "correctAnswer": "The difference between highest and lowest salary", "explanation": "This query calculates the range of salaries by subtracting the minimum salary from the maximum salary. SQL allows arithmetic operations between aggregate functions in the select list.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_agg_quiz_5", "questionText": "What happens when you use GROUP BY without any aggregate functions?", "type": "MCQ", "options": ["It returns one row for each group", "It returns an error", "It is equivalent to using DISTINCT", "It returns only the first row of each group"], "correctAnswer": "It returns one row for each group", "explanation": "GROUP BY without aggregate functions will return one row for each distinct combination of values in the GROUP BY columns, similar to DISTINCT but with different semantics in some databases.", "difficulty": "HARD"}
+  ]
+}

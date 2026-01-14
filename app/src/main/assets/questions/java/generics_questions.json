@@ -1,0 +1,1 @@
+{"topicId":"generics","questions":[{"id":"generics_theory_1","questionText":"What are generics in Java?","type":"THEORY","correctAnswer":"Parameterized types to enable code reuse for different types.","explanation":"Generics ensure type safety at compile-time.","difficulty":"EASY"}]}

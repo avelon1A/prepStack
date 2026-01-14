@@ -1,0 +1,8 @@
+{
+  "topicId": "kotlin_fundamentals",
+  "quizQuestions": [
+    {"id": "kotlin_quiz_1", "questionText": "What symbol is used to declare a nullable variable in Kotlin?", "type": "MCQ", "options": ["?", "*", "!", "."], "correctAnswer": "?", "explanation": "A variable type like String? allows null in Kotlin.", "difficulty": "EASY"},
+    {"id": "kotlin_quiz_2", "questionText": "What keyword defines a read-only property in Kotlin?", "type": "MCQ", "options": ["var", "val", "const", "readonly"], "correctAnswer": "val", "explanation": "val defines an immutable property.", "difficulty": "EASY"},
+    {"id": "kotlin_quiz_3", "questionText": "How do you define an extension function?", "type": "MCQ", "options": ["fun Int.square() = this * this", "extension Int.square() = this * this", "def Int.square()", "extend Int.square()"], "correctAnswer": "fun Int.square() = this * this", "explanation": "Use 'fun ClassName.funcName'.", "difficulty": "MEDIUM"}
+  ]
+}

@@ -1,0 +1,1 @@
+{"topicId":"generics","quizQuestions":[{"id":"generics_quiz_1","questionText":"Which of these is a generic type in Java?","type":"MCQ","options":["List<T>","IntList","Array","HashMap"],"correctAnswer":"List<T>","explanation":"List<T> uses a type parameter.","difficulty":"EASY"}]}

@@ -1,0 +1,7 @@
+{
+  "topicId": "android_permissions",
+  "questions": [
+    {"id": "permissions_theory_1", "questionText": "What are runtime permissions in Android?", "type": "THEORY", "correctAnswer": "Permissions that must be requested from the user at runtime (Android 6.0/API 23+).", "explanation": "Improve privacy by letting users decide at runtime.", "codeExample": "if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {\n    ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), CAMERA_REQUEST_CODE)\n}", "imageUrl": "", "difficulty": "EASY"},
+    {"id": "permissions_theory_2", "questionText": "What is the difference between normal and dangerous permissions?", "type": "THEORY", "correctAnswer": "Normal permissions are granted at install. Dangerous permissions require runtime approval.", "explanation": "Dangerous permissions may affect user privacy/data.", "codeExample": "<uses-permission android:name=\"android.permission.CAMERA\" />", "imageUrl": "", "difficulty": "EASY"}
+  ]
+}

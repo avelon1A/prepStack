@@ -1,0 +1,15 @@
+{
+  "topicId": "dynamic_programming",
+  "questions": [
+    {
+      "id": "dynamic_programming_theory_1",
+      "questionText": "What is dynamic programming, and how does it differ from recursion and greedy algorithms?",
+      "type": "THEORY",
+      "correctAnswer": "Dynamic programming (DP) is an optimization technique that solves problems by combining solutions to subproblems, storing these solutions to avoid recomputation. DP differs from recursion by using memoization/tabulation to avoid repetition; greedy algorithms make locally optimal choices without considering subproblems.",
+      "explanation": "DP applies to problems with overlapping subproblems and optimal substructure, such as the Fibonacci sequence or knapsack problem. DP stores previously computed results to streamline calculation, recursion does not.",
+      "codeExample": "fun fibonacci(n: Int, memo: IntArray): Int {\n    if (n <= 1) return n\n    if (memo[n] != 0) return memo[n]\n    memo[n] = fibonacci(n-1, memo) + fibonacci(n-2, memo)\n    return memo[n]\n}",
+      "imageUrl": "",
+      "difficulty": "HARD"
+    }
+  ]
+}

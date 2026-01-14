@@ -1,0 +1,1 @@
+{"topicId":"memory","questions":[{"id":"memory_theory_1","questionText":"What is garbage collection in Java?","type":"THEORY","correctAnswer":"Automatic process by which Java removes unused objects from memory.","explanation":"Helps prevent memory leaks by reclaiming space for unreachable objects.","difficulty":"EASY"}]}

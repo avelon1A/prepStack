@@ -1,0 +1,8 @@
+{
+  "topicId": "java_fundamentals",
+  "questions": [
+    {"id": "java_theory_1", "questionText": "What is Java?", "type": "THEORY", "correctAnswer": "A popular, object-oriented, platform-independent programming language.", "explanation": "Java is used for backend, Android, big data, and enterprise applications.", "difficulty": "EASY"},
+    {"id": "java_theory_2", "questionText": "What is the JVM?", "type": "THEORY", "correctAnswer": "Java Virtual Machine, which runs compiled Java bytecode.", "explanation": "The JVM is what makes Java platform-independent.", "difficulty": "EASY"},
+    {"id": "java_theory_3", "questionText": "What is a class in Java?", "type": "THEORY", "correctAnswer": "A blueprint for creating objects, defining their state (fields) and behavior (methods).", "explanation": "All objects are created from classes in Java.", "difficulty": "EASY"}
+  ]
+}

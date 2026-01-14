@@ -1,0 +1,1 @@
+{"topicId":"exceptions","quizQuestions":[{"id":"exceptions_quiz_1","questionText":"Which exception must be handled or declared?","type":"MCQ","options":["RuntimeException","IOException","Error","NullPointerException"],"correctAnswer":"IOException","explanation":"IOException is a checked exception.","difficulty":"EASY"}]}

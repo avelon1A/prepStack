@@ -1,0 +1,7 @@
+{
+  "topicId": "data_analysis_advanced",
+  "quizQuestions": [
+    {"id": "data_analysis_advanced_quiz_1", "questionText": "What is the F1-score?", "type": "MCQ", "options": ["The average of precision and recall", "The harmonic mean of precision and recall", "The product of precision and recall", "The sum of precision and recall"], "correctAnswer": "The harmonic mean of precision and recall", "explanation": "F1-score = 2 * (precision * recall) / (precision + recall).", "difficulty": "MEDIUM"},
+    {"id": "data_analysis_advanced_quiz_2", "questionText": "What is the ROC curve?", "type": "MCQ", "options": ["A plot of accuracy vs precision", "A plot of true positive rate vs false positive rate", "A plot of recall vs precision", "A plot of bias vs variance"], "correctAnswer": "A plot of true positive rate vs false positive rate", "explanation": "The ROC curve plots TPR vs FPR to measure classifier performance.", "difficulty": "MEDIUM"}
+  ]
+}

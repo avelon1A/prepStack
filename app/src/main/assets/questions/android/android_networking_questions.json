@@ -1,0 +1,7 @@
+{
+  "topicId": "android_networking",
+  "questions": [
+    {"id": "networking_theory_1", "questionText": "What is Retrofit in Android?", "type": "THEORY", "correctAnswer": "Retrofit is a type-safe HTTP client for Android and Java that makes it easy to consume REST APIs by converting HTTP APIs into Java interfaces.", "explanation": "Retrofit handles network requests/responses, URL handling, and conversion.", "codeExample": "interface ApiService {\n    @GET(\"users/{id}\")\n    suspend fun getUser(@Path(\"id\") id: Int): Response<User>\n}\n\nval retrofit = Retrofit.Builder()\n    .baseUrl(\"https://api.example.com/\")\n    .addConverterFactory(GsonConverterFactory.create())\n    .build()", "imageUrl": "", "difficulty": "EASY" },
+    {"id": "networking_theory_2", "questionText": "What are the main components of Retrofit?", "type": "THEORY", "correctAnswer": "Retrofit instance, API interface, Converters, Call adapters.", "explanation": "API interface defines endpoints, converters handle serialization, call adapters manage async.", "codeExample": "val retrofit = Retrofit.Builder()\n    .baseUrl(BASE_URL)\n    .addConverterFactory(GsonConverterFactory.create())\n    .build()\ninterface Api {\n    @GET(\"users\")\n    suspend fun getUsers(): List<User>\n}", "imageUrl": "", "difficulty": "MEDIUM" }
+  ]
+}

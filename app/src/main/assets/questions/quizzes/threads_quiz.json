@@ -1,0 +1,1 @@
+{"topicId":"threads","quizQuestions":[{"id":"threads_quiz_1","questionText":"Which Java keyword is used for concurrency control?","type":"MCQ","options":["volatile","synchronized","native","transient"],"correctAnswer":"synchronized","explanation":"synchronized controls access to blocks and methods in Java.","difficulty":"EASY"}]}

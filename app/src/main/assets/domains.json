@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "domains": [
+    {
+      "id": "android",
+      "name": "Android",
+      "iconUrl": "https://img.icons8.com/color/96/android-os.png",
+      "topicsFile": "domains/android.json"
+    },
+    {
+      "id": "kotlin",
+      "name": "Kotlin",
+      "iconUrl": "https://img.icons8.com/color/96/kotlin.png",
+      "topicsFile": "domains/kotlin.json"
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "iconUrl": "https://img.icons8.com/color/96/java-coffee-cup-logo.png",
+      "topicsFile": "domains/java.json"
+    },
+    {
+      "id": "dsa",
+      "name": "DSA",
+      "iconUrl": "https://img.icons8.com/color/96/code.png",
+      "topicsFile": "domains/dsa.json"
+    },
+    {
+      "id": "sql",
+      "name": "SQL",
+      "iconUrl": "https://img.icons8.com/color/96/sql.png",
+      "topicsFile": "domains/sql.json"
+    },
+    {
+      "id": "data_analysis",
+      "name": "Data Analysis",
+      "iconUrl": "https://img.icons8.com/color/96/combo-chart--v1.png",
+      "topicsFile": "domains/data_analysis.json"
+    }
+  ]
+}

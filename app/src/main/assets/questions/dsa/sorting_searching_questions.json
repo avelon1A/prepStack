@@ -1,0 +1,15 @@
+{
+  "topicId": "sorting_searching",
+  "questions": [
+    {
+      "id": "sorting_searching_theory_1",
+      "questionText": "Compare Merge Sort and Quick Sort in terms of their time complexity and use-cases.",
+      "type": "THEORY",
+      "correctAnswer": "Merge Sort is a stable, O(n log n) sorting algorithm best suited for linked lists and external sorting. Quick Sort is O(n log n) on average but O(n^2) worst case. It is generally faster for arrays and in-memory sorting due to locality of reference.",
+      "explanation": "Merge Sort divides and merges, and is more predictable in performance. Quick Sort partitions based on a pivot, and its speed comes from efficient memory use, but risks degradation on poor input order.",
+      "codeExample": "// Merge Sort\nfun mergeSort(arr: IntArray) { /* ... */ }\n// Quick Sort\nfun quickSort(arr: IntArray) { /* ... */ }",
+      "imageUrl": "",
+      "difficulty": "HARD"
+    }
+  ]
+}

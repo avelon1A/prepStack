@@ -1,0 +1,14 @@
+{
+  "topicId": "data_visualization",
+  "quizQuestions": [
+    {"id": "data_viz_quiz_1", "questionText": "Which chart type is best for comparing parts of a whole?", "type": "MCQ", "options": ["Pie chart", "Scatter plot", "Box plot", "Line chart"], "correctAnswer": "Pie chart", "explanation": "Pie charts show how individual parts relate to the whole by displaying each category as a slice of the pie, making proportion comparisons intuitive.", "difficulty": "EASY"},
+    
+    {"id": "data_viz_quiz_2", "questionText": "What visualization technique would be most appropriate for displaying the distribution of a continuous variable?", "type": "MCQ", "options": ["Histogram", "Pie chart", "Stacked bar chart", "Network diagram"], "correctAnswer": "Histogram", "explanation": "Histograms group continuous data into bins and show the frequency distribution, making them ideal for visualizing how values are distributed across a range.", "difficulty": "EASY"},
+    
+    {"id": "data_viz_quiz_3", "questionText": "What does a box plot (box-and-whisker plot) show?", "type": "MCQ", "options": ["Distribution, median, quartiles, and outliers", "Only mean and standard deviation", "Correlation between two variables", "Categorical counts"], "correctAnswer": "Distribution, median, quartiles, and outliers", "explanation": "Box plots show the five-number summary (minimum, first quartile, median, third quartile, maximum) and highlight outliers, making them excellent for comparing distributions.", "difficulty": "MEDIUM"},
+    
+    {"id": "data_viz_quiz_4", "questionText": "Which of the following is an example of a bad practice in data visualization?", "type": "MCQ", "options": ["Using a truncated Y-axis without clear indication", "Using consistent color schemes across related charts", "Including clear titles and labels", "Simplifying complex visualizations"], "correctAnswer": "Using a truncated Y-axis without clear indication", "explanation": "Truncating the Y-axis without clear indication can exaggerate differences and mislead viewers about the magnitude of changes in the data, violating the principle of truthful representation.", "difficulty": "MEDIUM"},
+    
+    {"id": "data_viz_quiz_5", "questionText": "Which type of chart is most effective for showing the relationship between two numerical variables?", "type": "MCQ", "options": ["Scatter plot", "Pie chart", "Stacked bar chart", "Donut chart"], "correctAnswer": "Scatter plot", "explanation": "Scatter plots display individual data points along two axes, making them ideal for visualizing relationships, correlations, clusters, and outliers between two numerical variables.", "difficulty": "EASY"}
+  ]
+}

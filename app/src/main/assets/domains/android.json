@@ -1,0 +1,163 @@
+{
+  "domainId": "android",
+  "quizzes": [
+    {
+      "id": "android_basics",
+      "topicId": "android_basics",
+      "title": "Android Basics Quiz",
+      "file": "questions/quizzes/android_basics_quiz.json"
+    },
+    {
+      "id": "android_jetpack",
+      "topicId": "android_jetpack",
+      "title": "Jetpack Compose Quiz",
+      "file": "questions/quizzes/android_jetpack_quiz.json"
+    },
+    {
+      "id": "android_lifecycle",
+      "topicId": "android_lifecycle",
+      "title": "Android Lifecycle Quiz",
+      "file": "questions/quizzes/android_lifecycle_quiz.json"
+    },
+    {
+      "id": "android_fragments",
+      "topicId": "android_fragments",
+      "title": "Android Fragments Quiz",
+      "file": "questions/quizzes/android_fragments_quiz.json"
+    },
+    {
+      "id": "android_room",
+      "topicId": "android_room",
+      "title": "Room Database Quiz",
+      "file": "questions/quizzes/android_room_quiz.json"
+    },
+    {
+      "id": "android_coroutines",
+      "topicId": "android_coroutines",
+      "title": "Coroutines & Concurrency Quiz",
+      "file": "questions/quizzes/android_coroutines_quiz.json"
+    },
+    {
+      "id": "android_networking",
+      "topicId": "android_networking",
+      "title": "Networking & Retrofit Quiz",
+      "file": "questions/quizzes/android_networking_quiz.json"
+    },
+    {
+      "id": "android_permissions",
+      "topicId": "android_permissions",
+      "title": "Permissions & Security Quiz",
+      "file": "questions/quizzes/android_permissions_quiz.json"
+    },
+    {
+      "id": "android_viewbinding",
+      "topicId": "android_viewbinding",
+      "title": "View Binding Quiz",
+      "file": "questions/quizzes/android_viewbinding_quiz.json"
+    },
+    {
+      "id": "android_navigation",
+      "topicId": "android_navigation",
+      "title": "Navigation Component Quiz",
+      "file": "questions/quizzes/android_navigation_quiz.json"
+    },
+    {
+      "id": "android_dependency_injection",
+      "topicId": "android_dependency_injection",
+      "title": "Dependency Injection Quiz",
+      "file": "questions/quizzes/android_dependency_injection_quiz.json"
+    },
+    {
+      "id": "android_testing",
+      "topicId": "android_testing",
+      "title": "Testing Quiz",
+      "file": "questions/quizzes/android_testing_quiz.json"
+    }
+  ],
+  "topics": [
+    {
+      "id": "android_basics",
+      "name": "Android Basics",
+      "description": "Core Android concepts and architecture",
+      "iconUrl": "https://img.icons8.com/color/96/android-os.png",
+      "questionsFile": "questions/android/android_basics_questions.json"
+    },
+    {
+      "id": "android_jetpack",
+      "name": "Jetpack Compose",
+      "description": "Modern toolkit for building native Android UI",
+      "iconUrl": "https://img.icons8.com/color/96/jetpack-joyride.png",
+      "questionsFile": "questions/android/android_jetpack_questions.json"
+    },
+    {
+      "id": "android_lifecycle",
+      "name": "Android Lifecycle",
+      "description": "Understanding Activity and Fragment lifecycle management",
+      "iconUrl": "https://img.icons8.com/color/96/lifecycle.png",
+      "questionsFile": "questions/android/android_lifecycle_questions.json"
+    },
+    {
+      "id": "android_fragments",
+      "name": "Android Fragments",
+      "description": "Working with Fragments for modular UI design",
+      "iconUrl": "https://img.icons8.com/color/96/puzzle.png",
+      "questionsFile": "questions/android/android_fragments_questions.json"
+    },
+    {
+      "id": "android_room",
+      "name": "Room Database",
+      "description": "Local database persistence using Room library",
+      "iconUrl": "https://img.icons8.com/color/96/database.png",
+      "questionsFile": "questions/android/android_room_questions.json"
+    },
+    {
+      "id": "android_coroutines",
+      "name": "Coroutines & Concurrency",
+      "description": "Asynchronous programming with Kotlin Coroutines",
+      "iconUrl": "https://img.icons8.com/color/96/parallel-tasks.png",
+      "questionsFile": "questions/android/android_coroutines_questions.json"
+    },
+    {
+      "id": "android_networking",
+      "name": "Networking & Retrofit",
+      "description": "Network operations and API integration",
+      "iconUrl": "https://img.icons8.com/color/96/api-settings.png",
+      "questionsFile": "questions/android/android_networking_questions.json"
+    },
+    {
+      "id": "android_permissions",
+      "name": "Permissions & Security",
+      "description": "Runtime permissions and app security",
+      "iconUrl": "https://img.icons8.com/color/96/security-shield-green.png",
+      "questionsFile": "questions/android/android_permissions_questions.json"
+    },
+    {
+      "id": "android_viewbinding",
+      "name": "View Binding",
+      "description": "Type-safe view access with View Binding",
+      "iconUrl": "https://img.icons8.com/color/96/data-transfer.png",
+      "questionsFile": "questions/android/android_viewbinding_questions.json"
+    },
+    {
+      "id": "android_navigation",
+      "name": "Navigation Component",
+      "description": "Navigation architecture and implementation",
+      "iconUrl": "https://img.icons8.com/color/96/compass.png",
+      "questionsFile": "questions/android/android_navigation_questions.json"
+    },
+    {
+      "id": "android_dependency_injection",
+      "name": "Dependency Injection",
+      "description": "DI with Dagger Hilt and Koin",
+      "iconUrl": "https://img.icons8.com/color/96/syringe.png",
+      "questionsFile": "questions/android/android_dependency_injection_questions.json"
+    },
+    {
+      "id": "android_testing",
+      "name": "Testing",
+      "description": "Unit, integration, and UI testing",
+      "iconUrl": "https://img.icons8.com/color/96/test-tube.png",
+      "questionsFile": "questions/android/android_testing_questions.json"
+    }
+  ]
+}

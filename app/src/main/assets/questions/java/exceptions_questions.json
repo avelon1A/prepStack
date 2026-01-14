@@ -1,0 +1,13 @@
+{
+  "topicId": "exceptions",
+  "questions": [
+    {
+      "id": "exceptions_theory_1",
+      "questionText": "What is a checked exception in Java?",
+      "type": "THEORY",
+      "correctAnswer": "An exception that must be declared or handled in code.",
+      "explanation": "A checked exception in Java is an exception that is verified at compile time.\n\n• Compile-time checking\nThe compiler ensures that checked exceptions are either caught using a try-catch block or declared using the throws keyword.\n\n• Exception hierarchy\nChecked exceptions are subclasses of Exception but do not extend RuntimeException.\n\n• Purpose\nThey are used to represent recoverable conditions that a program can anticipate and handle gracefully.\n\n• Common examples\nIOException, SQLException, and FileNotFoundException are typical examples of checked exceptions.",
+      "difficulty": "EASY"
+    }
+  ]
+}

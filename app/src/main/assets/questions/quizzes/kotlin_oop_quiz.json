@@ -1,0 +1,14 @@
+{
+  "topicId": "kotlin_oop",
+  "quizQuestions": [
+    {"id": "kotlin_oop_quiz_1", "questionText": "Which of the following is NOT automatically generated for a Kotlin data class?", "type": "MCQ", "options": ["A constructor with default parameter values", "equals() method", "hashCode() method", "toString() method"], "correctAnswer": "A constructor with default parameter values", "explanation": "Data classes automatically generate equals(), hashCode(), toString(), and copy() methods, but constructors with default values must be explicitly defined by the developer.", "difficulty": "EASY"},
+    
+    {"id": "kotlin_oop_quiz_2", "questionText": "What is the visibility of a property or method in Kotlin if no modifier is specified?", "type": "MCQ", "options": ["public", "protected", "private", "internal"], "correctAnswer": "public", "explanation": "In Kotlin, the default visibility is public. This differs from Java, where the default is package-private (similar to Kotlin's internal).", "difficulty": "EASY"},
+    
+    {"id": "kotlin_oop_quiz_3", "questionText": "Which statement about companion objects is true?", "type": "MCQ", "options": ["A class can have multiple companion objects", "Companion objects can implement interfaces", "Companion objects are accessible only within their containing class", "Companion objects must be declared at the top of the class"], "correctAnswer": "Companion objects can implement interfaces", "explanation": "A class can have only one companion object. They can implement interfaces (unlike static members in Java), are accessible outside their containing class, and can be declared anywhere within the class body.", "difficulty": "MEDIUM"},
+    
+    {"id": "kotlin_oop_quiz_4", "questionText": "Which Kotlin feature is best suited for implementing a state machine with a limited set of possible states?", "type": "MCQ", "options": ["Sealed classes", "Data classes", "Extension functions", "Companion objects"], "correctAnswer": "Sealed classes", "explanation": "Sealed classes are ideal for representing restricted class hierarchies like state machines, where you want to ensure that all possible states are known at compile time and defined in one place.", "difficulty": "MEDIUM"},
+    
+    {"id": "kotlin_oop_quiz_5", "questionText": "What does the 'by lazy' delegate in Kotlin do?", "type": "MCQ", "options": ["Initializes a property the first time it is accessed", "Makes a property nullable", "Creates a backing field for a property", "Allows property initialization to be deferred to subclasses"], "correctAnswer": "Initializes a property the first time it is accessed", "explanation": "The 'by lazy' property delegate initializes a value only when it's first used, and then caches the result. It's thread-safe by default and useful for expensive operations that shouldn't happen at initialization time.", "difficulty": "HARD"}
+  ]
+}

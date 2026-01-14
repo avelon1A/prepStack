@@ -1,0 +1,8 @@
+{
+  "topicId": "arrays_strings",
+  "quizQuestions": [
+    {"id": "arrays_quiz_1", "questionText": "What is the time complexity to access the nth element in an array?", "type": "MCQ", "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"], "correctAnswer": "O(1)", "explanation": "Direct indexing in an array is a constant time operation.", "difficulty": "EASY"},
+    {"id": "arrays_quiz_2", "questionText": "Which method adds an element at the end of a dynamic array in Java?", "type": "MCQ", "options": ["add()", "append()", "push()", "insert()"], "correctAnswer": "add()", "explanation": "add() is used for ArrayList in Java.", "difficulty": "EASY"},
+    {"id": "strings_quiz_1", "questionText": "What will be the result of 'Hello'.substring(1, 4)?", "type": "MCQ", "options": ["ell", "ell o", "Hel", "llo"], "correctAnswer": "ell", "explanation": "The substring method returns the string from index 1 to 3.", "difficulty": "EASY"}
+  ]
+}

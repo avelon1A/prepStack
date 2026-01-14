@@ -1,0 +1,7 @@
+{
+  "topicId": "linkedlists",
+  "questions": [
+    {"id": "linkedlist_theory_1", "questionText": "What is a linked list?", "type": "THEORY", "correctAnswer": "A linear data structure where each element points to the next.", "explanation": "Linked lists enable efficient insertion/deletion but slow random access.", "difficulty": "EASY"},
+    {"id": "linkedlist_theory_2", "questionText": "What are the main types of linked lists?", "type": "THEORY", "correctAnswer": "Singly, doubly, and circular linked lists.", "explanation": "Pointer arrangement and bidirectional access are the main differences.", "difficulty": "EASY"}
+  ]
+}

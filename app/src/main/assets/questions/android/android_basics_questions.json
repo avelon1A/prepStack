@@ -1,0 +1,85 @@
+{
+  "topicId": "android_basics",
+  "questions": [
+    {
+      "id": "android_theory_1",
+      "questionText": "What is an Activity in Android?",
+      "type": "THEORY",
+      "correctAnswer": "An Activity is a fundamental Android component that represents a single screen with a user interface. It serves as a container for views, fragments, and UI elements that users interact with. Activities are responsible for handling user input, managing screen transitions, preserving state across configuration changes, and implementing application logic. Each activity has a defined lifecycle that is managed by the Android system, allowing the application to respond appropriately to system events and resource constraints.",
+      "explanation": "Activities form the foundation of the Android application architecture. They function within a well-defined lifecycle controlled by the Android OS:\n\n1. **onCreate()**: Called when the activity is first created. This is where you initialize essential components, set the content view, and restore saved state.\n\n2. **onStart()**: Called when the activity becomes visible to the user but isn't yet in the foreground.\n\n3. **onResume()**: Called when the activity enters the foreground and begins interacting with the user. This is where you should start animations, acquire exclusive resources, or initialize components that need to update only when visible to the user.\n\n4. **onPause()**: Called when the activity loses focus but is still partially visible. This is your last guaranteed chance to save data before the user leaves the activity. Operations here should be lightweight as they block the next activity from resuming.\n\n5. **onStop()**: Called when the activity is no longer visible to the user. You should release resources that aren't needed while the activity isn't visible.\n\n6. **onDestroy()**: Called before the activity is destroyed. This can happen because the activity is finishing (someone called finish()), the system is temporarily destroying the activity to save space, or due to configuration changes like rotation.\n\nActivities can launch other activities using Intents, which allow for data transfer between screens. They can also return results to their calling activities using the startActivityForResult() and onActivityResult() pattern (though this is now deprecated in favor of the Activity Result API).\n\nActivities can be launched in different launch modes (standard, singleTop, singleTask, singleInstance) to control how they're instantiated and organized in the back stack. They can also specify different task affinities to determine which task they belong to.",
+      "codeExample": "class DetailActivity : AppCompatActivity() {    \n    companion object {\n        private const val EXTRA_ITEM_ID = \"extra_item_id\"\n        \n        // Factory method for creating an intent to launch this activity\n        fun createIntent(context: Context, itemId: String): Intent {\n            return Intent(context, DetailActivity::class.java).apply {\n                putExtra(EXTRA_ITEM_ID, itemId)\n            }\n        }\n    }\n    \n    private lateinit var binding: ActivityDetailBinding\n    private var itemId: String? = null\n    \n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        binding = ActivityDetailBinding.inflate(layoutInflater)\n        setContentView(binding.root)\n        \n        // Get data from intent or saved instance state\n        itemId = savedInstanceState?.getString(EXTRA_ITEM_ID) ?: intent.getStringExtra(EXTRA_ITEM_ID)\n        \n        setupViews()\n    }\n    \n    override fun onResume() {\n        super.onResume()\n        // Start operations that should only run when activity is visible\n        loadItemDetails()\n    }\n    \n    override fun onPause() {\n        super.onPause()\n        // Save any unsaved changes or release resources\n    }\n    \n    override fun onSaveInstanceState(outState: Bundle) {\n        // Save state before activity destruction (like during rotation)\n        outState.putString(EXTRA_ITEM_ID, itemId)\n        super.onSaveInstanceState(outState)\n    }\n    \n    private fun setupViews() {\n        binding.backButton.setOnClickListener { finish() }\n        binding.shareButton.setOnClickListener { shareItem() }\n    }\n    \n    private fun loadItemDetails() {\n        // Load data from repository, database, or network\n    }\n    \n    private fun shareItem() {\n        // Example of launching another activity with an implicit intent\n        val shareIntent = Intent(Intent.ACTION_SEND).apply {\n            type = \"text/plain\"\n            putExtra(Intent.EXTRA_TEXT, \"Check out this item: $itemId\")\n        }\n        startActivity(Intent.createChooser(shareIntent, \"Share via\"))\n    }\n}",
+      "imageUrl": "https://developer.android.com/static/images/activity_lifecycle.png",
+      "difficulty": "EASY"
+    },
+    {
+      "id": "android_theory_2",
+      "questionText": "What is a Service in Android?",
+      "type": "THEORY",
+      "correctAnswer": "A Service is an application component that can perform long-running operations in the background without a user interface.",
+      "explanation": "Services continue running even if the user switches to another application. They are ideal for tasks like playing music, downloading files, or syncing data.",
+      "codeExample": "class MusicService : Service() {\n    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {\n        return START_STICKY\n    }\n}",
+      "imageUrl": "https://developer.android.com/static/images/service_lifecycle.png",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_theory_3",
+      "questionText": "What is AndroidManifest.xml?",
+      "type": "THEORY",
+      "correctAnswer": "AndroidManifest.xml is a crucial configuration file that provides essential information about your app to the Android system.",
+      "explanation": "The manifest file declares all app components, required permissions, minimum API level, hardware and software features, and other metadata.",
+      "codeExample": "<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <uses-permission android:name=\"android.permission.INTERNET\" />\n    <application>\n        <activity android:name=\".MainActivity\" />\n    </application>\n</manifest>",
+      "imageUrl": "https://developer.android.com/static/images/app-manifest-hierarchy.png",
+      "difficulty": "EASY"
+    },
+    {
+      "id": "android_theory_4",
+      "questionText": "What is the difference between onCreate() and onStart()?",
+      "type": "THEORY",
+      "correctAnswer": "onCreate() is called when the activity is first created and is where you initialize your app. onStart() is called when the activity becomes visible to the user.",
+      "explanation": "onCreate() is called once during the activity's lifetime and is where you should do one-time initializations. onStart() is called every time the activity becomes visible, including after being hidden.",
+      "codeExample": "override fun onCreate(savedInstanceState: Bundle?) {\n    super.onCreate(savedInstanceState)\n    setContentView(R.layout.activity_main)\n    // One-time initialization\n}\n\noverride fun onStart() {\n    super.onStart()\n    // Called when activity becomes visible\n}",
+      "imageUrl": "https://developer.android.com/static/images/fundamentals/activity_lifecycle_callbacks.png",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_theory_5",
+      "questionText": "What is a Broadcast Receiver?",
+      "type": "THEORY",
+      "correctAnswer": "A Broadcast Receiver is a component that responds to system-wide broadcast announcements or messages from other apps.",
+      "explanation": "Broadcast Receivers allow your app to respond to system events like battery low, network change, or boot completed. They can be registered in the manifest or dynamically in code.",
+      "codeExample": "class MyReceiver : BroadcastReceiver() {\n    override fun onReceive(context: Context, intent: Intent) {\n        // Handle broadcast\n    }\n}",
+      "imageUrl": "https://developer.android.com/static/images/broadcast-overview.png",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "id": "android_theory_6",
+      "questionText": "What is a Content Provider?",
+      "type": "THEORY",
+      "correctAnswer": "A Content Provider manages access to a structured set of data and enables data sharing between different applications.",
+      "explanation": "Content Providers encapsulate data and provide mechanisms for defining data security. They are the standard interface for connecting data in one process with code running in another process.",
+      "codeExample": "class MyProvider : ContentProvider() {\n    override fun query(uri: Uri, projection: Array<String>?, selection: String?, selectionArgs: Array<String>?, sortOrder: String?): Cursor {\n        // Query implementation\n    }\n}",
+      "imageUrl": "https://developer.android.com/static/images/content-provider-interaction.png",
+      "difficulty": "HARD"
+    },
+    {
+      "id": "android_theory_7",
+      "questionText": "What is the difference between px, dp, and sp?",
+      "type": "THEORY",
+      "correctAnswer": "px is actual screen pixels. dp (density-independent pixels) is abstract units that scale based on screen density. sp (scale-independent pixels) is like dp but also scales based on user's font size preference.",
+      "explanation": "Use dp for layout dimensions to ensure consistent sizing across different screen densities. Use sp for text sizes to respect user's font size settings. Avoid using px directly.",
+      "codeExample": "// dp to px conversion\nval dp = 16f\nval px = dp * resources.displayMetrics.density\n\n// sp for text\nText(text = \"Hello\", fontSize = 16.sp)",
+      "imageUrl": "https://developer.android.com/static/images/density-device-width_2x.png",
+      "difficulty": "EASY"
+    },
+    {
+      "id": "android_theory_8",
+      "questionText": "What is the Android Application Class?",
+      "type": "THEORY",
+      "correctAnswer": "The Application class is the base class for maintaining global application state and is created before any other component when the app process starts.",
+      "explanation": "You can extend Application to maintain global state, initialize libraries, or handle app-level events. It's optional and should be used sparingly.",
+      "codeExample": "class MyApp : Application() {\n    override fun onCreate() {\n        super.onCreate()\n        // Initialize libraries\n    }\n}",
+      "imageUrl": "https://developer.android.com/static/images/application-class-hierarchy.png",
+      "difficulty": "MEDIUM"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "domainId": "kotlin",
+  "quizzes": [
+    { 
+      "id": "kotlin_fundamentals", 
+      "topicId": "kotlin_fundamentals", 
+      "title": "Kotlin Fundamentals Quiz", 
+      "file": "questions/quizzes/kotlin_fundamentals_quiz.json" 
+    },
+    {
+      "id": "kotlin_oop", 
+      "topicId": "kotlin_oop", 
+      "title": "Kotlin OOP Quiz", 
+      "file": "questions/quizzes/kotlin_oop_quiz.json"
+    },
+    {
+      "id": "kotlin_coroutines", 
+      "topicId": "kotlin_coroutines", 
+      "title": "Kotlin Coroutines Quiz", 
+      "file": "questions/quizzes/kotlin_coroutines_quiz.json"
+    },
+    {
+      "id": "kotlin_functional", 
+      "topicId": "kotlin_functional", 
+      "title": "Kotlin Functional Programming Quiz", 
+      "file": "questions/quizzes/kotlin_functional_quiz.json"
+    },
+    {
+      "id": "kotlin_extensions", 
+      "topicId": "kotlin_extensions", 
+      "title": "Kotlin Extensions & DSL Quiz", 
+      "file": "questions/quizzes/kotlin_extensions_quiz.json"
+    },
+    {
+      "id": "kotlin_android", 
+      "topicId": "kotlin_android", 
+      "title": "Kotlin for Android Quiz", 
+      "file": "questions/quizzes/kotlin_android_quiz.json"
+    },
+    {
+      "id": "kotlin_interop", 
+      "topicId": "kotlin_interop", 
+      "title": "Kotlin-Java Interoperability Quiz", 
+      "file": "questions/quizzes/kotlin_interop_quiz.json"
+    }
+  ],
+  "topics": [
+    { 
+      "id": "kotlin_fundamentals", 
+      "name": "Kotlin Fundamentals", 
+      "description": "Kotlin basics and syntax", 
+      "iconUrl": "https://img.icons8.com/color/96/kotlin.png", 
+      "questionsFile": "questions/kotlin/kotlin_fundamentals_questions.json" 
+    },
+    {
+      "id": "kotlin_oop",
+      "name": "Object-Oriented Programming",
+      "description": "Classes, interfaces, inheritance, and other OOP concepts in Kotlin",
+      "iconUrl": "https://img.icons8.com/color/96/settings-3.png",
+      "questionsFile": "questions/kotlin/kotlin_oop_questions.json"
+    },
+    {
+      "id": "kotlin_coroutines",
+      "name": "Coroutines & Concurrency",
+      "description": "Asynchronous programming with Kotlin Coroutines",
+      "iconUrl": "https://img.icons8.com/color/96/prototype.png",
+      "questionsFile": "questions/kotlin/kotlin_coroutines_questions.json"
+    },
+    {
+      "id": "kotlin_functional",
+      "name": "Functional Programming",
+      "description": "Collections, lambdas, higher-order functions, and functional concepts",
+      "iconUrl": "https://img.icons8.com/color/96/lambda.png",
+      "questionsFile": "questions/kotlin/kotlin_functional_questions.json"
+    },
+    {
+      "id": "kotlin_extensions",
+      "name": "Extensions & DSLs",
+      "description": "Extension functions, properties, and Domain Specific Languages",
+      "iconUrl": "https://img.icons8.com/color/96/code-block.png",
+      "questionsFile": "questions/kotlin/kotlin_extensions_questions.json"
+    },
+    {
+      "id": "kotlin_android",
+      "name": "Kotlin for Android",
+      "description": "Android-specific Kotlin features and best practices",
+      "iconUrl": "https://img.icons8.com/color/96/android-studio--v3.png",
+      "questionsFile": "questions/kotlin/kotlin_android_questions.json"
+    },
+    {
+      "id": "kotlin_interop",
+      "name": "Java Interoperability",
+      "description": "Working with Java and Kotlin in the same project",
+      "iconUrl": "https://img.icons8.com/color/96/java-coffee-cup-logo.png",
+      "questionsFile": "questions/kotlin/kotlin_interop_questions.json"
+    }
+  ]
+}

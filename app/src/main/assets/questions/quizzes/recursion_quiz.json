@@ -1,0 +1,1 @@
+{"topicId":"recursion","quizQuestions":[{"id":"recursion_quiz_1","questionText":"What is a key characteristic of a recursive function?","type":"MCQ","options":["Calls itself","Always iterative","Does not have base case","Requires loops"],"correctAnswer":"Calls itself","explanation":"A recursive function directly or indirectly calls itself.","difficulty":"EASY"}]}

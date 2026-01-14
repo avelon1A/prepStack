@@ -1,0 +1,7 @@
+{
+  "topicId": "android_navigation",
+  "questions": [
+    {"id": "navigation_theory_1", "questionText": "What is the Navigation Component in Android?", "type": "THEORY", "correctAnswer": "A framework for handling navigation between destinations, providing a visual editor and back stack management.", "explanation": "Simplifies navigation logic and handles back/Up button and arguments.", "codeExample": "dependencies {\n    def nav_version = \"2.7.0\"\n    implementation \"androidx.navigation:navigation-fragment:$nav_version\"\n    implementation \"androidx.navigation:navigation-ui:$nav_version\"\n}\nval navController = findNavController(R.id.nav_host_fragment)", "imageUrl": "", "difficulty": "EASY" },
+    {"id": "navigation_theory_2", "questionText": "What is a NavHost in Navigation Component?", "type": "THEORY", "correctAnswer": "An empty container that displays destinations from the navigation graph.", "explanation": "NavHost swaps in and out destinations (fragments/views) as users navigate.", "codeExample": "<fragment\n    android:id=\"@+id/nav_host_fragment\"\n    android:name=\"androidx.navigation.fragment.NavHostFragment\"\n    app:navGraph=\"@navigation/nav_graph\" />", "imageUrl": "", "difficulty": "EASY"}
+  ]
+}

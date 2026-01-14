@@ -1,0 +1,1 @@
+{"topicId":"java8","quizQuestions":[{"id":"java8_quiz_1","questionText":"Which of the following is new in Java 8?","type":"MCQ","options":["streams","unsigned int","checked exceptions","Applet"],"correctAnswer":"streams","explanation":"Streams API is a headline feature of Java 8.","difficulty":"EASY"}]}

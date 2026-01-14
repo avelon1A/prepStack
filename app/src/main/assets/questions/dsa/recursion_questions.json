@@ -1,0 +1,15 @@
+{
+  "topicId": "recursion",
+  "questions": [
+    {
+      "id": "recursion_theory_1",
+      "questionText": "Explain recursion and provide an example problem that is best solved using recursion.",
+      "type": "THEORY",
+      "correctAnswer": "Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. A classic example is calculating factorial or solving the Tower of Hanoi.",
+      "explanation": "Recursive solutions simplify code for problems that can be broken down into similar subproblems, e.g., traversing tree structures or permutations generation.",
+      "codeExample": "fun factorial(n: Int): Int = if (n == 0) 1 else n * factorial(n-1)",
+      "imageUrl": "",
+      "difficulty": "MEDIUM"
+    }
+  ]
+}

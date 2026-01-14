@@ -1,0 +1,7 @@
+{
+  "topicId": "linkedlists",
+  "quizQuestions": [
+    {"id": "linkedlists_quiz_1", "questionText": "Which is the time complexity to insert at the beginning of a singly linked list?", "type": "MCQ", "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"], "correctAnswer": "O(1)", "explanation": "Inserting at head is always O(1).", "difficulty": "EASY"},
+    {"id": "linkedlists_quiz_2", "questionText": "What technique is used to detect cycles in a linked list?", "type": "MCQ", "options": ["Two-pointer/Floyd's", "Hash Table", "Sorting", "Recursion"], "correctAnswer": "Two-pointer/Floyd's", "explanation": "Floyd's algorithm uses slow/fast pointers to detect cycles.", "difficulty": "EASY"}
+  ]
+}

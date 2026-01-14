@@ -1,0 +1,25 @@
+{
+  "domainId": "dsa",
+  "quizzes": [
+    { "id": "arrays_strings", "topicId": "arrays_strings", "title": "Arrays & Strings Quiz", "file": "questions/quizzes/arrays_strings_quiz.json" },
+    { "id": "linkedlists", "topicId": "linkedlists", "title": "Linked Lists Quiz", "file": "questions/quizzes/linkedlists_quiz.json" },
+    { "id": "stacks_queues", "topicId": "stacks_queues", "title": "Stacks & Queues Quiz", "file": "questions/quizzes/stacks_queues_quiz.json" },
+    { "id": "trees", "topicId": "trees", "title": "Trees Quiz", "file": "questions/quizzes/trees_quiz.json" },
+    { "id": "graphs", "topicId": "graphs", "title": "Graphs Quiz", "file": "questions/quizzes/graphs_quiz.json" },
+    { "id": "hashing", "topicId": "hashing", "title": "Hashing Quiz", "file": "questions/quizzes/hashing_quiz.json" },
+    { "id": "recursion", "topicId": "recursion", "title": "Recursion & Backtracking Quiz", "file": "questions/quizzes/recursion_quiz.json" },
+    { "id": "sorting_searching", "topicId": "sorting_searching", "title": "Sorting & Searching Quiz", "file": "questions/quizzes/sorting_searching_quiz.json" },
+    { "id": "dynamic_programming", "topicId": "dynamic_programming", "title": "Dynamic Programming Quiz", "file": "questions/quizzes/dynamic_programming_quiz.json" }
+  ],
+  "topics": [
+    { "id": "arrays_strings", "name": "Arrays & Strings", "description": "1D & 2D arrays, string basics and tricks", "iconUrl": "https://img.icons8.com/color/96/data-structures.png", "questionsFile": "questions/dsa/arrays_strings_questions.json" },
+    { "id": "linkedlists", "name": "Linked Lists", "description": "Singly, doubly, & circular lists, algorithms, and tricks", "iconUrl": "https://img.icons8.com/color/96/data-structures.png", "questionsFile": "questions/dsa/linkedlists_questions.json" },
+    { "id": "stacks_queues", "name": "Stacks & Queues", "description": "Stack and queue operations, applications, and related problems", "iconUrl": "https://img.icons8.com/color/96/data-structures.png", "questionsFile": "questions/dsa/stacks_queues_questions.json" },
+    { "id": "trees", "name": "Trees", "description": "Binary trees, BSTs, traversals, and advanced tree structures", "iconUrl": "https://img.icons8.com/color/96/tree.png", "questionsFile": "questions/dsa/trees_questions.json" },
+    { "id": "graphs", "name": "Graphs", "description": "Graph representations, traversal algorithms, shortest paths, cycles", "iconUrl": "https://img.icons8.com/color/96/graph.png", "questionsFile": "questions/dsa/graphs_questions.json" },
+    { "id": "hashing", "name": "Hashing", "description": "Hash tables, maps, collisions, and applications", "iconUrl": "https://img.icons8.com/color/96/hash.png", "questionsFile": "questions/dsa/hashing_questions.json" },
+    { "id": "recursion", "name": "Recursion & Backtracking", "description": "Recursive algorithms, problem solving, and backtracking techniques", "iconUrl": "https://img.icons8.com/color/96/recursion.png", "questionsFile": "questions/dsa/recursion_questions.json" },
+    { "id": "sorting_searching", "name": "Sorting & Searching", "description": "Classic sorting/searching algorithms, performance, and applications", "iconUrl": "https://img.icons8.com/color/96/sort-by-size.png", "questionsFile": "questions/dsa/sorting_searching_questions.json" },
+    { "id": "dynamic_programming", "name": "Dynamic Programming", "description": "DP principles, memoization, tabulation, real-world problems", "iconUrl": "https://img.icons8.com/color/96/dynamic.png", "questionsFile": "questions/dsa/dynamic_programming_questions.json" }
+  ]
+}

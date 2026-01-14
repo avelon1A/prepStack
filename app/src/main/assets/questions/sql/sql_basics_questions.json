@@ -1,0 +1,8 @@
+{
+  "topicId": "sql_basics",
+  "questions": [
+    {"id": "sql_theory_1", "questionText": "What is SQL?", "type": "THEORY", "correctAnswer": "Structured Query Language for managing and querying relational databases.", "explanation": "SQL lets you create, modify, and extract data from relational databases.", "difficulty": "EASY"},
+    {"id": "sql_theory_2", "questionText": "What is the difference between an INNER JOIN and a LEFT JOIN?", "type": "THEORY", "correctAnswer": "INNER JOIN gives only matching rows; LEFT JOIN gives all from left table, plus matches from right.", "explanation": "LEFT JOIN never shrinks left table; missing matches yield NULLs.", "difficulty": "MEDIUM"},
+    {"id": "sql_theory_3", "questionText": "What is a primary key?", "type": "THEORY", "correctAnswer": "A unique identifier for each row in a SQL table.", "explanation": "Every table should have a primary key to enforce row uniqueness.", "difficulty": "EASY"}
+  ]
+}

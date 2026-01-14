@@ -1,0 +1,7 @@
+{
+  "topicId": "data_analysis_basics",
+  "questions": [
+    {"id": "data_analysis_theory_1", "questionText": "What is the difference between mean, median, and mode?", "type": "THEORY", "correctAnswer": "Mean is the average, median is the middle value, and mode is the most frequent value.", "explanation": "Mean is sensitive to outliers, median is robust, mode is for categorical data.", "difficulty": "EASY"},
+    {"id": "data_analysis_theory_2", "questionText": "What is standard deviation?", "type": "THEORY", "correctAnswer": "A measure of how spread out values are around the mean.", "explanation": "Low standard deviation means values are close to mean.", "difficulty": "EASY"}
+  ]
+}

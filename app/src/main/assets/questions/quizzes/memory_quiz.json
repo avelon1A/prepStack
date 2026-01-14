@@ -1,0 +1,1 @@
+{"topicId":"memory","quizQuestions":[{"id":"memory_quiz_1","questionText":"Where are objects stored in Java?","type":"MCQ","options":["Stack","Heap","Register","Static block"],"correctAnswer":"Heap","explanation":"All objects, unless optimized away, go on the JVM heap.","difficulty":"EASY"}]}

@@ -1,0 +1,7 @@
+{
+  "topicId": "android_testing",
+  "questions": [
+    {"id": "testing_theory_1", "questionText": "What are the different types of testing in Android?", "type": "THEORY", "correctAnswer": "Unit tests (test individual functions/classes), Integration tests (components working together), UI tests (user interaction and app behavior).", "explanation": "Unit: logic in isolation. Integration: verify multiple pieces. UI: simulate real user scenarios.", "codeExample": "@Test\nfun addition_isCorrect() {\n    assertEquals(4, 2 + 2)\n}\n// UI test example\n@Test\nfun loginButtonClick_performsLogin() {\n    composeTestRule\n        .onNodeWithText(\"Login\")\n        .performClick()\n        .assertIsDisplayed()\n}", "imageUrl": "", "difficulty": "EASY"},
+    {"id": "testing_theory_2", "questionText": "What is JUnit and how is it used in Android testing?", "type": "THEORY", "correctAnswer": "JUnit is a popular Java/Kotlin testing framework with annotations and assertions.", "explanation": "Provides @Test and assertion methods (assertEquals, assertTrue, etc). Needed for unit/instrumented tests.", "codeExample": "import org.junit.Test\nimport org.junit.Assert.*\nclass CalculatorTest {\n    @Test\n    fun addition_isCorrect() {\n        val result = 2 + 2\n        assertEquals(4, result)\n    }\n}", "imageUrl": "", "difficulty": "EASY"}
+  ]
+}

@@ -1,0 +1,1 @@
+{"topicId":"oop_concepts","quizQuestions":[{"id":"oop_quiz_1","questionText":"Which principle allows methods to have the same name but different signatures?","type":"MCQ","options":["Encapsulation","Polymorphism","Abstraction","Inheritance"],"correctAnswer":"Polymorphism","explanation":"Polymorphism allows method overloading/overriding.","difficulty":"EASY"}]}

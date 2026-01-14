@@ -1,0 +1,8 @@
+{
+  "topicId": "kotlin_fundamentals",
+  "questions": [
+    {"id": "kotlin_theory_1", "questionText": "What is Kotlin?", "type": "THEORY", "correctAnswer": "A modern, expressive programming language for JVM, Android, and more.", "explanation": "Kotlin is officially supported for Android development and offers null safety, extension functions, and concise syntax.", "difficulty": "EASY"},
+    {"id": "kotlin_theory_2", "questionText": "What is a nullable type in Kotlin?", "type": "THEORY", "correctAnswer": "A type that allows null as a value, declared with a ? after the type name.", "explanation": "e.g., val x: String? can be null, but val y: String cannot.", "difficulty": "EASY"},
+    {"id": "kotlin_theory_3", "questionText": "What is an extension function in Kotlin?", "type": "THEORY", "correctAnswer": "A function that adds new functionality to an existing class without modifying its source code.", "explanation": "Define as fun ClassName.functionName() { }.", "difficulty": "MEDIUM"}
+  ]
+}

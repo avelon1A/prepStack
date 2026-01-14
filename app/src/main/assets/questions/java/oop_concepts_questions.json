@@ -1,0 +1,15 @@
+{
+  "topicId": "oop_concepts",
+  "questions": [
+    {
+      "id": "oop_theory_1",
+      "questionText": "What are the four pillars of OOP?",
+      "type": "THEORY",
+      "correctAnswer": "Encapsulation, Abstraction, Inheritance, Polymorphism.",
+      "explanation": "The four pillars of Object-Oriented Programming form the foundation of object-based design.\n\n• Encapsulation\nEncapsulation means wrapping data and the methods that operate on it into a single unit (class) and restricting direct access to internal data. This improves security and makes the code easier to maintain.\n\n• Abstraction\nAbstraction focuses on exposing only essential features while hiding complex implementation details. It helps reduce complexity and allows developers to work with simpler interfaces.\n\n• Inheritance\nInheritance allows a class to reuse and extend the properties and behavior of another class. This promotes code reusability and creates a clear class hierarchy.\n\n• Polymorphism\nPolymorphism allows the same method or interface to behave differently based on the object that invokes it. This makes the system flexible, extensible, and easier to scale.",
+      "codeExample": "open class Animal {\n    open fun sound() {\n        println(\"Animal makes a sound\")\n    }\n}\n\nclass Dog : Animal() {\n    override fun sound() {\n        println(\"Dog barks\")\n    }\n}\n\nfun main() {\n    val animal: Animal = Dog()\n    animal.sound()\n}",
+      "imageUrl": "",
+      "difficulty": "EASY"
+    }
+  ]
+}

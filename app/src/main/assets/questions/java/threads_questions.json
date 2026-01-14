@@ -1,0 +1,1 @@
+{"topicId":"threads","questions":[{"id":"threads_theory_1","questionText":"How do you create a thread in Java?","type":"THEORY","correctAnswer":"Extend Thread or implement Runnable and pass to a Thread.","explanation":"new Thread(new Runnable() { ... }) or subclass Thread.","difficulty":"EASY"}]}

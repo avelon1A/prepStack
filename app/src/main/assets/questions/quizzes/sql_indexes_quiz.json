@@ -1,0 +1,14 @@
+{
+  "topicId": "sql_indexes",
+  "quizQuestions": [
+    {"id": "sql_index_quiz_1", "questionText": "What is the primary purpose of a database index?", "type": "MCQ", "options": ["Speed up data retrieval", "Ensure data integrity", "Reduce database size", "Prevent duplicate entries"], "correctAnswer": "Speed up data retrieval", "explanation": "The primary purpose of a database index is to improve query performance by allowing the database engine to find and access specific rows more quickly without scanning the entire table.", "difficulty": "EASY"},
+    
+    {"id": "sql_index_quiz_2", "questionText": "Which of the following operations would be slowed down by having many indexes on a table?", "type": "MCQ", "options": ["INSERT operations", "SELECT operations", "JOIN operations", "ORDER BY operations"], "correctAnswer": "INSERT operations", "explanation": "INSERT operations are slowed down by indexes because each new record requires the database to update all indexes on the table. This is one of the trade-offs of using indexes - they speed up reads but can slow down writes.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_index_quiz_3", "questionText": "How many clustered indexes can a table have?", "type": "MCQ", "options": ["One", "Two", "As many as needed", "None required"], "correctAnswer": "One", "explanation": "A table can have only one clustered index because the clustered index determines the physical order of data in the table. This is a fundamental limitation in relational database systems.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_index_quiz_4", "questionText": "Which SQL command would you use to create an index?", "type": "MCQ", "options": ["CREATE INDEX", "ADD INDEX", "MAKE INDEX", "INDEX CREATE"], "correctAnswer": "CREATE INDEX", "explanation": "The standard SQL syntax for creating an index is CREATE INDEX followed by the index name, table name, and the column(s) to be indexed. For example: CREATE INDEX idx_name ON table_name(column_name).", "difficulty": "EASY"},
+    
+    {"id": "sql_index_quiz_5", "questionText": "Which type of index enforces uniqueness of the indexed columns?", "type": "MCQ", "options": ["UNIQUE index", "PRIMARY index", "FOREIGN index", "COMPOSITE index"], "correctAnswer": "UNIQUE index", "explanation": "A UNIQUE index ensures that the indexed columns do not contain duplicate values. It's often used to enforce business rules requiring uniqueness beyond the primary key, such as email addresses or other identifiers.", "difficulty": "MEDIUM"}
+  ]
+}

@@ -1,0 +1,1 @@
+{"topicId":"io","quizQuestions":[{"id":"io_quiz_1","questionText":"Which class is used to write text to a file in Java?","type":"MCQ","options":["BufferedReader","FileReader","FileWriter","Scanner"],"correctAnswer":"FileWriter","explanation":"FileWriter is for writing character files.","difficulty":"EASY"}]}

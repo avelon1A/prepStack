@@ -1,0 +1,1 @@
+{"topicId":"hashing","quizQuestions":[{"id":"hashing_quiz_1","questionText":"When two input values produce the same hash output, it is called a?","type":"MCQ","options":["Hash function","Collision","Probe","Mapping"],"correctAnswer":"Collision","explanation":"A collision occurs when two different data inputs yield the same hash.","difficulty":"MEDIUM"}]}

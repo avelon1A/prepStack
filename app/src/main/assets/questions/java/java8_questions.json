@@ -1,0 +1,1 @@
+{"topicId":"java8","questions":[{"id":"java8_theory_1","questionText":"What are Streams in Java 8?","type":"THEORY","correctAnswer":"A sequence of elements supporting functional-style operations.","explanation":"Streams allow map-filter-reduce pipelines.","difficulty":"EASY"}]}

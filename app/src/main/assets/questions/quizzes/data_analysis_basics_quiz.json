@@ -1,0 +1,7 @@
+{
+  "topicId": "data_analysis_basics",
+  "quizQuestions": [
+    {"id": "data_analysis_quiz_1", "questionText": "What measure of central tendency is most affected by outliers?", "type": "MCQ", "options": ["Mean", "Median", "Mode", "Range"], "correctAnswer": "Mean", "explanation": "Mean uses all values, so extreme values affect it the most.", "difficulty": "EASY"},
+    {"id": "data_analysis_quiz_2", "questionText": "What does a correlation coefficient of 0 indicate?", "type": "MCQ", "options": ["Perfect positive correlation", "Perfect negative correlation", "No linear correlation", "Weak correlation"], "correctAnswer": "No linear correlation", "explanation": "A coefficient of 0 means the variables are uncorrelated (linear sense).", "difficulty": "EASY"}
+  ]
+}

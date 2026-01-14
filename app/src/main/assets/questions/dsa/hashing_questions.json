@@ -1,0 +1,15 @@
+{
+  "topicId": "hashing",
+  "questions": [
+    {
+      "id": "hashing_theory_1",
+      "questionText": "What is a hash function? Why are hash collisions a problem, and how can they be handled?",
+      "type": "THEORY",
+      "correctAnswer": "A hash function converts input data into a fixed-size value, typically for fast lookups. Hash collisions occur when two different inputs produce the same output. Collisions reduce efficiency and security, and can be handled using techniques such as chaining (linked lists) or open addressing.",
+      "explanation": "Hash tables depend on good hash functions for O(1) average lookup. Poor hash functions increase collision rate and thus slow down lookups. Handling collisions ensures data integrity and optimal performance.",
+      "codeExample": "val map = HashMap<String, Int>()\nmap[\"key\"] = 42\n// Chaining: Each bucket holds a list\n// Open addressing: Probing empty slots",
+      "imageUrl": "",
+      "difficulty": "MEDIUM"
+    }
+  ]
+}

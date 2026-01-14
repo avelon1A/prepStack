@@ -1,0 +1,95 @@
+{
+  "domainId": "java",
+  "quizzes": [
+    { "id": "java_fundamentals", "topicId": "java_fundamentals", "title": "Java Fundamentals Quiz", "file": "questions/quizzes/java_fundamentals_quiz.json" },
+    { "id": "oop_concepts", "topicId": "oop_concepts", "title": "OOP Concepts Quiz", "file": "questions/quizzes/oop_concepts_quiz.json" },
+    { "id": "collections", "topicId": "collections", "title": "Collections Framework Quiz", "file": "questions/quizzes/collections_quiz.json" },
+    { "id": "exceptions", "topicId": "exceptions", "title": "Exceptions & Error Handling Quiz", "file": "questions/quizzes/exceptions_quiz.json" },
+    { "id": "threads", "topicId": "threads", "title": "Multithreading & Concurrency Quiz", "file": "questions/quizzes/threads_quiz.json" },
+    { "id": "streams", "topicId": "streams", "title": "Streams & Lambda Quiz", "file": "questions/quizzes/streams_quiz.json" },
+    { "id": "io", "topicId": "io", "title": "File I/O Quiz", "file": "questions/quizzes/io_quiz.json" },
+    { "id": "generics", "topicId": "generics", "title": "Generics Quiz", "file": "questions/quizzes/generics_quiz.json" },
+    { "id": "annotations", "topicId": "annotations", "title": "Annotations & Reflection Quiz", "file": "questions/quizzes/annotations_quiz.json" },
+    { "id": "memory", "topicId": "memory", "title": "Memory Management Quiz", "file": "questions/quizzes/memory_quiz.json" },
+    { "id": "java8", "topicId": "java8", "title": "Java 8+ Features Quiz", "file": "questions/quizzes/java8_quiz.json" }
+  ],
+  "topics": [
+    {
+      "id": "java_fundamentals",
+      "name": "Java Fundamentals",
+      "description": "Java basics and syntax",
+      "iconUrl": "https://img.icons8.com/fluency/96/java-duke-logo.png",
+      "questionsFile": "questions/java/java_fundamentals_questions.json"
+    },
+    {
+      "id": "oop_concepts",
+      "name": "OOP Concepts",
+      "description": "Object-oriented programming in Java",
+      "iconUrl": "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/96/external-object-oriented-programming-computer-science-flaticons-lineal-color-flat-icons.png",
+      "questionsFile": "questions/java/oop_concepts_questions.json"
+    },
+    {
+      "id": "collections",
+      "name": "Collections Framework",
+      "description": "Collections, List, Set, Map, and more",
+      "iconUrl": "https://img.icons8.com/fluency/96/array.png",
+      "questionsFile": "questions/java/collections_questions.json"
+    },
+    {
+      "id": "exceptions",
+      "name": "Exceptions & Error Handling",
+      "description": "Try-catch, custom exceptions, checked/unchecked",
+      "iconUrl": "https://img.icons8.com/fluency/96/exception.png",
+      "questionsFile": "questions/java/exceptions_questions.json"
+    },
+    {
+      "id": "threads",
+      "name": "Multithreading & Concurrency",
+      "description": "Threads, Runnable, synchronization",
+      "iconUrl": "https://img.icons8.com/fluency/96/parallel-tasks.png",
+      "questionsFile": "questions/java/threads_questions.json"
+    },
+    {
+      "id": "streams",
+      "name": "Streams & Lambda",
+      "description": "Functional programming, streams, and lambda expressions",
+      "iconUrl": "https://img.icons8.com/external-flaticons-flat-flat-icons/96/external-lambda-web-hosting-flaticons-flat-flat-icons.png",
+      "questionsFile": "questions/java/streams_questions.json"
+    },
+    {
+      "id": "io",
+      "name": "File I/O",
+      "description": "Reading, writing files, java.io, java.nio",
+      "iconUrl": "https://img.icons8.com/fluency/96/file-io.png",
+      "questionsFile": "questions/java/io_questions.json"
+    },
+    {
+      "id": "generics",
+      "name": "Generics",
+      "description": "Parameterized types, <T>",
+      "iconUrl": "https://img.icons8.com/office/96/diamonds-card.png",
+      "questionsFile": "questions/java/generics_questions.json"
+    },
+    {
+      "id": "annotations",
+      "name": "Annotations & Reflection",
+      "description": "@Override, custom annotations, java.lang.reflect",
+      "iconUrl": "https://img.icons8.com/fluency/96/annotation.png",
+      "questionsFile": "questions/java/annotations_questions.json"
+    },
+    {
+      "id": "memory",
+      "name": "Memory Management",
+      "description": "Garbage collection, memory leaks, JVM heap",
+      "iconUrl": "https://img.icons8.com/fluency/96/ram.png",
+      "questionsFile": "questions/java/memory_questions.json"
+    },
+    {
+      "id": "java8",
+      "name": "Java 8+ Features",
+      "description": "New features in Java 8, 9, 11, and later",
+      "iconUrl": "https://img.icons8.com/color/96/java-coffee-cup-logo--v1.png",
+      "questionsFile": "questions/java/java8_questions.json"
+    }
+  ]
+}

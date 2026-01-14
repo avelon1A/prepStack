@@ -1,0 +1,6 @@
+{
+  "topicId": "android_viewbinding",
+  "questions": [
+    {"id": "viewbinding_theory_1", "questionText": "What is View Binding in Android?", "type": "THEORY", "correctAnswer": "A feature that allows you to more easily interact with views by generating a binding class for each XML layout.", "explanation": "Eliminates findViewById() and offers type safety.", "codeExample": "android {\n    viewBinding {\n        enabled = true\n    }\n}\nprivate lateinit var binding: ActivityMainBinding\nbinding = ActivityMainBinding.inflate(layoutInflater)\nsetContentView(binding.root)\nbinding.textView.text = \"Hello\"", "imageUrl": "", "difficulty": "EASY"}
+  ]
+}

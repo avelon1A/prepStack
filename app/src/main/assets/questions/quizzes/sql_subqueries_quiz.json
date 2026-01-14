@@ -1,0 +1,14 @@
+{
+  "topicId": "sql_subqueries",
+  "quizQuestions": [
+    {"id": "sql_subq_quiz_1", "questionText": "Which SQL operator is used to test if a subquery returns any rows?", "type": "MCQ", "options": ["EXISTS", "CONTAINS", "HAS", "ANY"], "correctAnswer": "EXISTS", "explanation": "EXISTS is the standard SQL operator used to check if a subquery returns any rows. It returns TRUE if the subquery returns at least one row, and FALSE otherwise.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_subq_quiz_2", "questionText": "What is the main characteristic of a correlated subquery?", "type": "MCQ", "options": ["It references columns from the outer query", "It always returns a single value", "It can only appear in the WHERE clause", "It must use aggregate functions"], "correctAnswer": "It references columns from the outer query", "explanation": "A correlated subquery references columns from the outer query and must be re-evaluated for each row processed by the outer query. This is what distinguishes it from a non-correlated subquery, which is evaluated once for the entire outer query.", "difficulty": "HARD"},
+    
+    {"id": "sql_subq_quiz_3", "questionText": "Which of the following is a valid use of a subquery?", "type": "MCQ", "options": ["All of these are valid uses", "In the SELECT clause", "In the FROM clause", "In the WHERE clause"], "correctAnswer": "All of these are valid uses", "explanation": "Subqueries can be used in the SELECT clause (scalar subqueries), FROM clause (derived tables/inline views), WHERE clause (for filtering), and HAVING clause (for filtering groups).", "difficulty": "EASY"},
+    
+    {"id": "sql_subq_quiz_4", "questionText": "What does a subquery with 'SELECT DISTINCT' do in a NOT IN expression?", "type": "MCQ", "options": ["Eliminates duplicates before comparison", "Causes an error", "Always returns no results", "Has no effect on the comparison"], "correctAnswer": "Eliminates duplicates before comparison", "explanation": "The DISTINCT keyword in a subquery eliminates duplicate values before they are used in the NOT IN comparison. While this doesn't change the logical result, it can improve performance by reducing the number of comparisons needed.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_subq_quiz_5", "questionText": "Which of the following subquery types must return exactly one row and one column?", "type": "MCQ", "options": ["Scalar subquery", "Correlated subquery", "Derived table", "Multiple-row subquery"], "correctAnswer": "Scalar subquery", "explanation": "A scalar subquery must return exactly one row and one column (a single value). This is because it's used in contexts where a single value is expected, such as in comparisons or as part of expressions.", "difficulty": "EASY"}
+  ]
+}

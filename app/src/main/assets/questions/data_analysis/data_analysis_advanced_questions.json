@@ -1,0 +1,7 @@
+{
+  "topicId": "data_analysis_advanced",
+  "questions": [
+    {"id": "data_analysis_advanced_theory_1", "questionText": "What is the difference between parametric and non-parametric tests?", "type": "THEORY", "correctAnswer": "Parametric tests assume data follows a normal distribution; non-parametric tests do not.", "explanation": "Parametric examples: t-test, ANOVA. Non-parametric: Mann-Whitney U, Kruskal-Wallis.", "difficulty": "HARD"},
+    {"id": "data_analysis_advanced_theory_2", "questionText": "What is the Central Limit Theorem?", "type": "THEORY", "correctAnswer": "As sample size increases, the sampling distribution of the mean approaches normal regardless of population distribution.", "explanation": "CLT allows normal methods with large samples.", "difficulty": "HARD"}
+  ]
+}

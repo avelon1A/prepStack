@@ -1,0 +1,1 @@
+{"topicId":"sorting_searching","quizQuestions":[{"id":"sorting_searching_quiz_1","questionText":"What is the average time complexity of Quick Sort?","type":"MCQ","options":["O(n^2)","O(n \u00B7 n)","O(n log n)","O(n!)"],"correctAnswer":"O(n log n)","explanation":"Quick Sort has O(n log n) average time complexity due to recursive partitioning.","difficulty":"MEDIUM"}]}

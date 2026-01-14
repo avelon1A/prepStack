@@ -1,0 +1,7 @@
+{
+  "topicId": "android_dependency_injection",
+  "questions": [
+    {"id": "di_theory_1", "questionText": "What is Dependency Injection?", "type": "THEORY", "correctAnswer": "A design pattern where dependencies are provided to a class, promoting loose coupling and testability.", "explanation": "DI supports modular, testable, maintainable code by removing hard-coded dependencies.", "codeExample": "class UserRepository @Inject constructor(\n    private val apiService: ApiService\n)", "imageUrl": "", "difficulty": "EASY"},
+    {"id": "di_theory_2", "questionText": "What is Dagger Hilt?", "type": "THEORY", "correctAnswer": "Android's recommended dependency injection library built on top of Dagger.", "explanation": "Reduces boilerplate and integrates with Android lifecycle. Use @AndroidEntryPoint.", "codeExample": "@HiltAndroidApp\nclass MyApplication : Application()\n@AndroidEntryPoint\nclass MainActivity : AppCompatActivity() {\n    @Inject lateinit var userRepository: UserRepository\n}", "imageUrl": "", "difficulty": "EASY" }
+  ]
+}

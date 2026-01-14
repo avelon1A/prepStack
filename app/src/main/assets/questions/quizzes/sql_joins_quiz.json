@@ -1,0 +1,14 @@
+{
+  "topicId": "sql_joins",
+  "quizQuestions": [
+    {"id": "sql_joins_quiz_1", "questionText": "Which type of JOIN returns rows that have matching values in both tables?", "type": "MCQ", "options": ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL OUTER JOIN"], "correctAnswer": "INNER JOIN", "explanation": "INNER JOIN only returns rows where there is a match in both tables. Rows with no matching values in the other table are excluded.", "difficulty": "EASY"},
+    
+    {"id": "sql_joins_quiz_2", "questionText": "In a LEFT JOIN, if there is no match in the right table, what values are returned for the right table's columns?", "type": "MCQ", "options": ["NULL", "0", "Empty string", "Default values"], "correctAnswer": "NULL", "explanation": "In a LEFT JOIN, all rows from the left table are included. If there is no match in the right table, NULL values are returned for the right table's columns.", "difficulty": "EASY"},
+    
+    {"id": "sql_joins_quiz_3", "questionText": "Which JOIN would you use to return all rows from both tables, including unmatched rows?", "type": "MCQ", "options": ["FULL OUTER JOIN", "INNER JOIN", "LEFT JOIN", "RIGHT JOIN"], "correctAnswer": "FULL OUTER JOIN", "explanation": "FULL OUTER JOIN returns all rows when there is a match in either the left or right table. If there is no match, NULL values are returned for the columns of the table without a match.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_joins_quiz_4", "questionText": "What is produced when using a CROSS JOIN between two tables with 5 and 10 rows respectively?", "type": "MCQ", "options": ["50 rows", "15 rows", "5 rows", "10 rows"], "correctAnswer": "50 rows", "explanation": "A CROSS JOIN produces a Cartesian product, which means every row from the first table is paired with every row from the second table. 5 × 10 = 50 rows.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_joins_quiz_5", "questionText": "Which of the following is NOT a valid JOIN type in standard SQL?", "type": "MCQ", "options": ["NATURAL JOIN", "CROSS JOIN", "OUTER JOIN", "SEMI JOIN"], "correctAnswer": "SEMI JOIN", "explanation": "SEMI JOIN is not a standard SQL join type. It's a concept often implemented using EXISTS or IN subqueries. Valid standard join types include INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, CROSS JOIN, and NATURAL JOIN.", "difficulty": "HARD"}
+  ]
+}

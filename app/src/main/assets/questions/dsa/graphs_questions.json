@@ -1,0 +1,15 @@
+{
+  "topicId": "graphs",
+  "questions": [
+    {
+      "id": "graphs_theory_1",
+      "questionText": "Explain the difference between a directed and an undirected graph. Give an example where a directed graph is essential.",
+      "type": "THEORY",
+      "correctAnswer": "In a directed graph, edges have a direction (from one vertex to another), while in an undirected graph, edges do not have a specific direction. A directed graph is essential in representing dependencies, such as a prerequisite system or web page links.",
+      "explanation": "Directed graphs model situations where relationships are asymmetric (e.g., following on social media, or task dependencies). Undirected graphs are symmetric, as in physical connections between computers in a network.",
+      "codeExample": "val graph = mutableMapOf<Int, MutableList<Int>>() // adjacency list for directed graph\ngraph[1] = mutableListOf(2)\ngraph[2] = mutableListOf(3)",
+      "imageUrl": "",
+      "difficulty": "EASY"
+    }
+  ]
+}

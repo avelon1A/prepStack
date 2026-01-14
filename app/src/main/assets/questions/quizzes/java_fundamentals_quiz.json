@@ -1,0 +1,8 @@
+{
+  "topicId": "java_fundamentals",
+  "quizQuestions": [
+    {"id": "java_quiz_1", "questionText": "Which keyword defines a class in Java?", "type": "MCQ", "options": ["object", "class", "define", "struct"], "correctAnswer": "class", "explanation": "The 'class' keyword defines a class.", "difficulty": "EASY"},
+    {"id": "java_quiz_2", "questionText": "Where does Java code run?", "type": "MCQ", "options": ["CPU", "JVM", "JavaScript engine", "Browser"], "correctAnswer": "JVM", "explanation": "Java code compiles to bytecode that runs on the JVM.", "difficulty": "EASY"},
+    {"id": "java_quiz_3", "questionText": "Which of these is the correct method signature for main?", "type": "MCQ", "options": ["private int main()", "public static void main(String[] args)", "void main()", "def main"], "correctAnswer": "public static void main(String[] args)", "explanation": "The main method must be public, static, void, and take a String array.", "difficulty": "EASY"}
+  ]
+}

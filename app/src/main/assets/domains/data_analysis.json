@@ -1,0 +1,71 @@
+{
+  "domainId": "data_analysis",
+  "quizzes": [
+    { "id": "data_analysis_basics", "topicId": "data_analysis_basics", "title": "Data Analysis Fundamentals Quiz", "file": "questions/quizzes/data_analysis_basics_quiz.json" },
+    { "id": "data_analysis_advanced", "topicId": "data_analysis_advanced", "title": "Advanced Data Analysis Quiz", "file": "questions/quizzes/data_analysis_advanced_quiz.json" },
+    { "id": "data_visualization", "topicId": "data_visualization", "title": "Data Visualization Quiz", "file": "questions/quizzes/data_visualization_quiz.json" },
+    { "id": "data_cleaning", "topicId": "data_cleaning", "title": "Data Cleaning & Preprocessing Quiz", "file": "questions/quizzes/data_cleaning_quiz.json" },
+    { "id": "statistical_testing", "topicId": "statistical_testing", "title": "Statistical Testing Quiz", "file": "questions/quizzes/statistical_testing_quiz.json" },
+    { "id": "exploratory_analysis", "topicId": "exploratory_analysis", "title": "Exploratory Data Analysis Quiz", "file": "questions/quizzes/exploratory_analysis_quiz.json" },
+    { "id": "regression_analysis", "topicId": "regression_analysis", "title": "Regression Analysis Quiz", "file": "questions/quizzes/regression_analysis_quiz.json" },
+    { "id": "time_series_analysis", "topicId": "time_series_analysis", "title": "Time Series Analysis Quiz", "file": "questions/quizzes/time_series_analysis_quiz.json" }
+  ],
+  "topics": [
+    { 
+      "id": "data_analysis_basics", 
+      "name": "Data Analysis Fundamentals", 
+      "description": "Core data analysis concepts", 
+      "iconUrl": "https://img.icons8.com/color/96/analytics.png", 
+      "questionsFile": "questions/data_analysis/data_analysis_basics_questions.json" 
+    },
+    { 
+      "id": "data_analysis_advanced", 
+      "name": "Advanced Data Analysis", 
+      "description": "Advanced statistical methods and machine learning", 
+      "iconUrl": "https://img.icons8.com/color/96/analytics.png", 
+      "questionsFile": "questions/data_analysis/data_analysis_advanced_questions.json" 
+    },
+    {
+      "id": "data_visualization",
+      "name": "Data Visualization",
+      "description": "Creating effective charts, graphs, and visual representations",
+      "iconUrl": "https://img.icons8.com/color/96/combo-chart--v1.png",
+      "questionsFile": "questions/data_analysis/data_visualization_questions.json"
+    },
+    {
+      "id": "data_cleaning",
+      "name": "Data Cleaning & Preprocessing",
+      "description": "Handling missing values, outliers, and preparing data for analysis",
+      "iconUrl": "https://img.icons8.com/color/96/data-cleaning.png",
+      "questionsFile": "questions/data_analysis/data_cleaning_questions.json"
+    },
+    {
+      "id": "statistical_testing",
+      "name": "Statistical Testing",
+      "description": "Hypothesis testing, p-values, and statistical significance",
+      "iconUrl": "https://img.icons8.com/color/96/statistics.png",
+      "questionsFile": "questions/data_analysis/statistical_testing_questions.json"
+    },
+    {
+      "id": "exploratory_analysis",
+      "name": "Exploratory Data Analysis",
+      "description": "Investigating datasets, finding patterns, and generating hypotheses",
+      "iconUrl": "https://img.icons8.com/color/96/search--v1.png",
+      "questionsFile": "questions/data_analysis/exploratory_analysis_questions.json"
+    },
+    {
+      "id": "regression_analysis",
+      "name": "Regression Analysis",
+      "description": "Linear models, relationship modeling, and predictive analytics",
+      "iconUrl": "https://img.icons8.com/color/96/line-chart.png",
+      "questionsFile": "questions/data_analysis/regression_analysis_questions.json"
+    },
+    {
+      "id": "time_series_analysis",
+      "name": "Time Series Analysis",
+      "description": "Analyzing temporal data, forecasting, and seasonality",
+      "iconUrl": "https://img.icons8.com/color/96/area-chart.png",
+      "questionsFile": "questions/data_analysis/time_series_analysis_questions.json"
+    }
+  ]
+}

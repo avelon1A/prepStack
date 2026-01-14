@@ -1,0 +1,14 @@
+{
+  "topicId": "sql_advanced",
+  "quizQuestions": [
+    {"id": "sql_adv_quiz_1", "questionText": "Which SQL clause is used to define a Common Table Expression (CTE)?", "type": "MCQ", "options": ["WITH", "HAVING", "USING", "DEFINE"], "correctAnswer": "WITH", "explanation": "The WITH clause is used to define Common Table Expressions in SQL. A CTE provides a way to write auxiliary statements for use in a larger query and can improve readability and maintenance of complex queries.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_adv_quiz_2", "questionText": "What SQL window function would you use to rank rows within a partition without gaps in the ranking sequence?", "type": "MCQ", "options": ["DENSE_RANK()", "RANK()", "ROW_NUMBER()", "NTILE()"], "correctAnswer": "DENSE_RANK()", "explanation": "DENSE_RANK() provides a ranking without gaps. If there's a tie for position 2, the next row would be position 3. In contrast, RANK() would leave a gap, making the next row position 4.", "difficulty": "HARD"},
+    
+    {"id": "sql_adv_quiz_3", "questionText": "What is the main advantage of a materialized view over a regular view?", "type": "MCQ", "options": ["Better query performance", "More security options", "Easier to create", "Supports more complex queries"], "correctAnswer": "Better query performance", "explanation": "Materialized views store the results of their query physically, so they offer better performance for complex or frequently-executed queries compared to regular views, which compute their results each time they're accessed.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_adv_quiz_4", "questionText": "Which of the following is NOT a common type of database partitioning?", "type": "MCQ", "options": ["Sequential partitioning", "Range partitioning", "List partitioning", "Hash partitioning"], "correctAnswer": "Sequential partitioning", "explanation": "The common types of database partitioning are range partitioning (based on value ranges), list partitioning (based on discrete values), hash partitioning (based on a hash function), and composite partitioning (combination of methods). 'Sequential partitioning' is not a standard type.", "difficulty": "MEDIUM"},
+    
+    {"id": "sql_adv_quiz_5", "questionText": "What makes a CTE recursive?", "type": "MCQ", "options": ["It references itself in the definition", "It uses window functions", "It accesses temporary tables", "It has multiple SELECT statements"], "correctAnswer": "It references itself in the definition", "explanation": "A recursive CTE is one that references itself within its own definition. It consists of an anchor member (the non-recursive part) and a recursive member, joined by a UNION or UNION ALL. This structure allows for querying hierarchical or graph-structured data.", "difficulty": "HARD"}
+  ]
+}

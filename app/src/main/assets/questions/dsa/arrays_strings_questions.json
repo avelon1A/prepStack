@@ -1,0 +1,8 @@
+{
+  "topicId": "arrays_strings",
+  "questions": [
+    {"id": "arrays_theory_1", "questionText": "What is an array?", "type": "THEORY", "correctAnswer": "A fixed-size, ordered collection of elements of the same type.", "explanation": "Arrays store data at contiguous memory locations and allow O(1) access by index.", "difficulty": "EASY"},
+    {"id": "arrays_theory_2", "questionText": "What is the time complexity to insert at the end of a dynamic array?", "type": "THEORY", "correctAnswer": "Amortized O(1)", "explanation": "Occasionally O(n) on resize, but most inserts are O(1).", "difficulty": "EASY"},
+    {"id": "strings_theory_1", "questionText": "What is a string in most modern programming languages?", "type": "THEORY", "correctAnswer": "A sequence of characters stored as an array.", "explanation": "Strings are commonly implemented as contiguous arrays of characters, sometimes immutable.", "difficulty": "EASY"}
+  ]
+}

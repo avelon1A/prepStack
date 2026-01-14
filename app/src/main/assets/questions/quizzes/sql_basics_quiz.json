@@ -1,0 +1,8 @@
+{
+  "topicId": "sql_basics",
+  "quizQuestions": [
+    {"id": "sql_quiz_1", "questionText": "Which SQL keyword is used to sort results?", "type": "MCQ", "options": ["ORDER BY", "WHERE", "GROUP BY", "SORT BY"], "correctAnswer": "ORDER BY", "explanation": "ORDER BY arranges rows in the result set.", "difficulty": "EASY"},
+    {"id": "sql_quiz_2", "questionText": "What does the DISTINCT keyword do?", "type": "MCQ", "options": ["Removes duplicate rows", "Sorts results", "Filters results", "Groups results"], "correctAnswer": "Removes duplicate rows", "explanation": "DISTINCT only outputs unique rows.", "difficulty": "EASY"},
+    {"id": "sql_quiz_3", "questionText": "Which SQL clause groups rows for aggregation?", "type": "MCQ", "options": ["GROUP BY", "ORDER BY", "WHERE", "LIMIT"], "correctAnswer": "GROUP BY", "explanation": "GROUP BY is used to group rows that have the same values into summary rows.", "difficulty": "EASY" }
+  ]
+}

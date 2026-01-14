@@ -1,0 +1,63 @@
+{
+  "domainId": "sql",
+  "quizzes": [
+    { "id": "sql_basics", "topicId": "sql_basics", "title": "SQL Fundamentals Quiz", "file": "questions/quizzes/sql_basics_quiz.json" },
+    { "id": "sql_joins", "topicId": "sql_joins", "title": "SQL Joins Quiz", "file": "questions/quizzes/sql_joins_quiz.json" },
+    { "id": "sql_aggregations", "topicId": "sql_aggregations", "title": "Aggregations & Functions Quiz", "file": "questions/quizzes/sql_aggregations_quiz.json" },
+    { "id": "sql_subqueries", "topicId": "sql_subqueries", "title": "Subqueries Quiz", "file": "questions/quizzes/sql_subqueries_quiz.json" },
+    { "id": "sql_indexes", "topicId": "sql_indexes", "title": "Indexes & Performance Quiz", "file": "questions/quizzes/sql_indexes_quiz.json" },
+    { "id": "sql_transactions", "topicId": "sql_transactions", "title": "Transactions & ACID Quiz", "file": "questions/quizzes/sql_transactions_quiz.json" },
+    { "id": "sql_advanced", "topicId": "sql_advanced", "title": "Advanced SQL Quiz", "file": "questions/quizzes/sql_advanced_quiz.json" }
+  ],
+  "topics": [
+    { 
+      "id": "sql_basics", 
+      "name": "SQL Fundamentals", 
+      "description": "Basic SQL queries", 
+      "iconUrl": "https://img.icons8.com/color/96/database.png", 
+      "questionsFile": "questions/sql/sql_basics_questions.json" 
+    },
+    {
+      "id": "sql_joins",
+      "name": "SQL Joins",
+      "description": "Inner, outer, left, right, and cross joins",
+      "iconUrl": "https://img.icons8.com/color/96/database--v1.png",
+      "questionsFile": "questions/sql/sql_joins_questions.json"
+    },
+    {
+      "id": "sql_aggregations",
+      "name": "Aggregations & Functions",
+      "description": "GROUP BY, HAVING, and SQL aggregate functions",
+      "iconUrl": "https://img.icons8.com/color/96/combo-chart--v1.png",
+      "questionsFile": "questions/sql/sql_aggregations_questions.json"
+    },
+    {
+      "id": "sql_subqueries",
+      "name": "Subqueries",
+      "description": "Nested queries and correlated subqueries",
+      "iconUrl": "https://img.icons8.com/color/96/data-configuration.png",
+      "questionsFile": "questions/sql/sql_subqueries_questions.json"
+    },
+    {
+      "id": "sql_indexes",
+      "name": "Indexes & Performance",
+      "description": "Creating indexes and query optimization",
+      "iconUrl": "https://img.icons8.com/color/96/speed.png",
+      "questionsFile": "questions/sql/sql_indexes_questions.json"
+    },
+    {
+      "id": "sql_transactions",
+      "name": "Transactions & ACID",
+      "description": "Transaction management and ACID properties",
+      "iconUrl": "https://img.icons8.com/color/96/data-protection.png",
+      "questionsFile": "questions/sql/sql_transactions_questions.json"
+    },
+    {
+      "id": "sql_advanced",
+      "name": "Advanced SQL",
+      "description": "Window functions, CTEs, and advanced SQL concepts",
+      "iconUrl": "https://img.icons8.com/color/96/database-administrator.png",
+      "questionsFile": "questions/sql/sql_advanced_questions.json"
+    }
+  ]
+}

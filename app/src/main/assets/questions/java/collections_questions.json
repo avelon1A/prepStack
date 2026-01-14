@@ -1,0 +1,13 @@
+{
+  "topicId": "collections",
+  "questions": [
+    {
+      "id": "collections_theory_1",
+      "questionText": "What is a List in Java?",
+      "type": "THEORY",
+      "correctAnswer": "An ordered collection that can contain duplicate elements.",
+      "explanation": "A List in Java is part of the Collections Framework and represents an ordered collection where elements are stored in a specific sequence.\n\n• Order\nElements in a List maintain the order in which they are inserted, and each element can be accessed using an index.\n\n• Duplicates\nA List allows duplicate elements, meaning the same value can appear multiple times.\n\n• Implementations\nCommon implementations of the List interface include ArrayList, LinkedList, and Vector.\n\n• Usage\nLists are commonly used when the order of elements matters and when frequent access or iteration over elements is required.",
+      "difficulty": "EASY"
+    }
+  ]
+}

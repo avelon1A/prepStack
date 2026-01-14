@@ -1,0 +1,1 @@
+{"topicId":"streams","questions":[{"id":"streams_theory_1","questionText":"What is the Java Stream API?","type":"THEORY","correctAnswer":"An API for functional-style operations on streams of data.","explanation":"Introduced in Java 8 for efficient, declarative data processing.","difficulty":"MEDIUM"}]}

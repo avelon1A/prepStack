@@ -1,0 +1,13 @@
+{
+  "topicId": "annotations",
+  "questions": [
+    {
+      "id": "annotations_theory_1",
+      "questionText": "What is an annotation in Java?",
+      "type": "THEORY",
+      "correctAnswer": "A special kind of metadata used to provide information to the compiler or IDE.",
+      "explanation": "An annotation in Java is a form of metadata that provides additional information about code without changing its actual logic.\n\n• Purpose\nAnnotations are mainly used to give instructions to the compiler, development tools, or runtime frameworks.\n\n• Usage\nThey begin with the @ symbol and can be applied to classes, methods, variables, parameters, and more.\n\n• Benefits\nAnnotations help reduce boilerplate code, improve readability, and enable powerful features such as code generation, validation, and dependency injection.\n\n• Examples of use cases\nCommon uses include marking deprecated code, overriding methods, configuring frameworks, and enabling compile-time or runtime checks.",
+      "difficulty": "EASY"
+    }
+  ]
+}

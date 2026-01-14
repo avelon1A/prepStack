@@ -1,0 +1,1 @@
+{"topicId":"io","questions":[{"id":"io_theory_1","questionText":"What class is commonly used for reading files line by line in Java?","type":"THEORY","correctAnswer":"BufferedReader.","explanation":"BufferedReader wraps FileReader for efficient line-by-line reading.","difficulty":"EASY"}]}

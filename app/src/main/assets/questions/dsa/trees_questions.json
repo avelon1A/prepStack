@@ -1,0 +1,15 @@
+{
+  "topicId": "trees",
+  "questions": [
+    {
+      "id": "trees_theory_1",
+      "questionText": "What is the difference between a binary tree and a binary search tree (BST)?",
+      "type": "THEORY",
+      "correctAnswer": "A binary tree is a tree structure where each node has at most two children. A binary search tree (BST) is a special kind of binary tree in which the left child contains values less than the parent node, and the right child contains values greater than the parent node.",
+      "explanation": "BSTs enable efficient search, insertion, and deletion due to their sorted structure. Regular binary trees do not enforce order, so their traversal operations are less optimized for searching.",
+      "codeExample": "class TreeNode(val value: Int, val left: TreeNode?, val right: TreeNode?)\n// Binary Search property:\n// left.value < node.value < right.value",
+      "imageUrl": "",
+      "difficulty": "MEDIUM"
+    }
+  ]
+}

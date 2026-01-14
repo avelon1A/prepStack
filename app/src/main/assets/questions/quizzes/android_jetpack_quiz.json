@@ -1,0 +1,8 @@
+{
+  "topicId": "android_jetpack",
+  "quizQuestions": [
+    {"id": "compose_quiz_1", "questionText": "What is the main advantage of Jetpack Compose over XML layouts?", "type": "MCQ", "options": ["Better performance", "Declarative UI paradigm", "Smaller APK size", "Better backward compatibility"], "correctAnswer": "Declarative UI paradigm", "explanation": "With Compose, you describe the UI for a given state, not how to mutate it.", "difficulty": "MEDIUM"},
+    {"id": "compose_quiz_2", "questionText": "What annotation is used to mark a function as a Composable?", "type": "MCQ", "options": ["@Composable", "@Compose", "@UI", "@View"], "correctAnswer": "@Composable", "explanation": "Use @Composable for Compose functions.", "difficulty": "EASY"},
+    {"id": "compose_quiz_3", "questionText": "What function is used to create observable state in Compose?", "type": "MCQ", "options": ["stateOf()", "mutableStateOf()", "createState()", "observeState()"], "correctAnswer": "mutableStateOf()", "explanation": "mutableStateOf produces observable state changes.", "difficulty": "EASY"}
+  ]
+}

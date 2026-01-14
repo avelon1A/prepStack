@@ -1,0 +1,15 @@
+{
+  "topicId": "stacks_queues",
+  "questions": [
+    {
+      "id": "stacks_queues_theory_1",
+      "questionText": "Describe the difference between a stack and a queue. Provide one common use-case for each.",
+      "type": "THEORY",
+      "correctAnswer": "A stack follows the Last-In-First-Out (LIFO) principle where the last element added is removed first. A queue follows the First-In-First-Out (FIFO) principle where the first element added is removed first. Stacks are commonly used for function call management and undo operations; queues are used for scheduling tasks and order processing.",
+      "explanation": "Stacks operate with two main operations: push and pop, and are crucial for recursive function stacks, browser history, etc. Queues operate with enqueue and dequeue, essential in resource scheduling and breadth-first search.",
+      "codeExample": "// Stack (Kotlin)\nval stack = Stack<Int>()\nstack.push(1)\nstack.pop()\n// Queue (Kotlin)\nval queue: Queue<Int> = LinkedList()\nqueue.add(1)\nqueue.poll()",
+      "imageUrl": "",
+      "difficulty": "EASY"
+    }
+  ]
+}

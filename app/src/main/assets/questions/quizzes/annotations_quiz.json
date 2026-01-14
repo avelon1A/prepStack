@@ -1,0 +1,1 @@
+{"topicId":"annotations","quizQuestions":[{"id":"annotations_quiz_1","questionText":"Which syntax declares an annotation?","type":"MCQ","options":["@Override","@Annotation","annotation Override","#Override"],"correctAnswer":"@Override","explanation":"All annotations begin with @, e.g., @Override.","difficulty":"EASY"}]}
