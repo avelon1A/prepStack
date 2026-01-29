@@ -35,28 +35,12 @@ fun NavGraph(
     questionDetailViewModel: QuestionDetailViewModel,
     quizViewModel: QuizViewModel,
     userProgressRepository: UserProgressRepository,
-    startDestination: String = Screen.Splash.route
+    startDestination: String = Screen.Main.route
 ) {
     NavHost(
         navController = navController,
         startDestination = startDestination
     ) {
-        // Splash Screen
-        composable(route = Screen.Splash.route) {
-            // Log screen view
-            LaunchedEffect(Unit) {
-                AnalyticsLogger.logScreenView("splash_screen")
-            }
-            
-            SplashScreen(
-                onNavigateToDomain = {
-                    navController.navigate(Screen.Main.route) {
-                        popUpTo(Screen.Splash.route) { inclusive = true }
-                    }
-                }
-            )
-        }
-        
         // Main Screen with Bottom Navigation
         composable(route = Screen.Main.route) {
             // Log screen view

@@ -4,7 +4,6 @@ package com.prepstack.ui.navigation
  * Sealed class representing all navigation destinations
  */
 sealed class Screen(val route: String) {
-    data object Splash : Screen("splash")
     data object Main : Screen("main")
     data object Domain : Screen("domain")
     data object Topic : Screen("topic/{domainId}") {

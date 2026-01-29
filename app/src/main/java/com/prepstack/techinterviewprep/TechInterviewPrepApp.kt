@@ -2,6 +2,10 @@ package com.prepstack.techinterviewprep
 
 import android.app.Application
 import android.os.Build
+import coil.ImageLoader
+import coil.ImageLoaderFactory
+import coil.disk.DiskCache
+import coil.memory.MemoryCache
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.prepstack.ads.AdManager
 import com.prepstack.bookmarks.data.BookmarkDatabase
@@ -24,7 +28,7 @@ import kotlinx.coroutines.launch
  * Application class for dependency injection and initialization
  * In production, use Hilt or Koin for DI
  */
-class TechInterviewPrepApp : Application() {
+class TechInterviewPrepApp : Application(), ImageLoaderFactory {
     
     private val applicationScope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
     
@@ -128,5 +132,24 @@ class TechInterviewPrepApp : Application() {
             // Call the default exception handler after logging
             defaultExceptionHandler?.uncaughtException(thread, throwable)
         }
+    }
+    
+    /**
+     * Configure Coil ImageLoader with custom disk and memory cache settings
+     */
+    override fun newImageLoader(): ImageLoader {
+        return ImageLoader.Builder(this)
+            .diskCache {
+                DiskCache.Builder()
+                    .directory(cacheDir.resolve("image_cache"))
+                    .maxSizePercent(0.02) // 2% of disk
+                    .build()
+            }
+            .memoryCache {
+                MemoryCache.Builder(this)
+                    .maxSizePercent(0.25) // 25% of available memory
+                    .build()
+            }
+            .build()
     }
 }
