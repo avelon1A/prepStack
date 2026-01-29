@@ -80,6 +80,12 @@
       "codeExample": "class MyApp : Application() {\n    override fun onCreate() {\n        super.onCreate()\n        // Initialize libraries\n    }\n}",
       "imageUrl": "https://developer.android.com/static/images/application-class-hierarchy.png",
       "difficulty": "MEDIUM"
+    },{
+      "id": "android_theory_9",
+      "questionText": "How a android app goes from launcher click to first frame drawn",
+      "type": "Interview prep Google",
+      "correctAnswer": "1 user taps one the app icon on launcher \n2.ActivityMangerService{AMS} \n3.Zygote fork the app process \n4.app process initialized \n4.activity app launch lifecycle begins",
+      "difficulty": "HARD"
     }
   ]
 }
