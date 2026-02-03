@@ -39,7 +39,7 @@ fun AppVoiceInterviewScreen(
         )
     }
     var showRationale by remember { mutableStateOf(false) }
-    
+
     // Permission launcher
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission()
@@ -49,14 +49,14 @@ fun AppVoiceInterviewScreen(
             showRationale = true
         }
     }
-    
+
     // Check and request permission on first composition
     LaunchedEffect(Unit) {
         if (!hasPermission) {
             permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
         }
     }
-    
+
     if (!hasPermission) {
         // Show permission request screen
         PermissionRequestScreen(
@@ -83,7 +83,7 @@ fun AppVoiceInterviewScreen(
                 apiKey = apiKey
             )
         }
-        
+
         VoiceInterviewScreen(
             viewModel = viewModel,
             onBackClick = onBackClick
@@ -128,17 +128,17 @@ private fun PermissionRequestScreen(
                 modifier = Modifier.size(80.dp),
                 tint = MaterialTheme.colorScheme.primary
             )
-            
+
             Spacer(modifier = Modifier.height(24.dp))
-            
+
             Text(
                 text = "Microphone Permission Required",
                 style = MaterialTheme.typography.headlineSmall,
                 textAlign = TextAlign.Center
             )
-            
+
             Spacer(modifier = Modifier.height(16.dp))
-            
+
             Text(
                 text = if (showRationale) {
                     "Voice Interview needs microphone access to listen to your answers. " +
@@ -151,9 +151,9 @@ private fun PermissionRequestScreen(
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
-            
+
             Spacer(modifier = Modifier.height(32.dp))
-            
+
             if (showRationale) {
                 Button(
                     onClick = onOpenSettings,
@@ -163,9 +163,9 @@ private fun PermissionRequestScreen(
                 ) {
                     Text("Open Settings")
                 }
-                
+
                 Spacer(modifier = Modifier.height(12.dp))
-                
+
                 OutlinedButton(
                     onClick = onBack,
                     modifier = Modifier
@@ -183,9 +183,9 @@ private fun PermissionRequestScreen(
                 ) {
                     Text("Grant Permission")
                 }
-                
+
                 Spacer(modifier = Modifier.height(12.dp))
-                
+
                 TextButton(onClick = onBack) {
                     Text("Maybe Later")
                 }
