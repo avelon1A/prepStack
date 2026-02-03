@@ -142,10 +142,10 @@ private fun PermissionRequestScreen(
             Text(
                 text = if (showRationale) {
                     "Voice Interview needs microphone access to listen to your answers. " +
-                            "Please grant the permission in app settings to use this feature."
+                    "Please grant the permission in app settings to use this feature."
                 } else {
                     "Voice Interview uses your microphone to record and evaluate your spoken answers. " +
-                            "This helps you practice technical interviews naturally through conversation."
+                    "This helps you practice technical interviews naturally through conversation."
                 },
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center,

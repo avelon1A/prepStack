@@ -1,8 +1,3 @@
-// Remove erroneous import that could be causing build issues
-
-import java.util.Properties
-import java.io.FileInputStream
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -10,7 +5,6 @@ plugins {
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
 }
-
 
 android {
     namespace = "com.prepstack.techinterviewprep"
@@ -24,17 +18,30 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        
+
 
     }
-    
+
     signingConfigs {
         create("release") {
             storeFile = file("/Users/amantoppo/aman.jks")
             storePassword = "123456"
             keyAlias = "key0"
             keyPassword = "123456"
-            
+
+            // Enable V1 and V2 signing
+            enableV1Signing = true
+            enableV2Signing = true
+        }
+    }
+
+    signingConfigs {
+        create("release") {
+            storeFile = file("/Users/amantoppo/aman.jks")
+            storePassword = "123456"
+            keyAlias = "key0"
+            keyPassword = "123456"
+
             // Enable V1 and V2 signing
             enableV1Signing = true
             enableV2Signing = true
@@ -74,16 +81,20 @@ android {
         compose = true
         buildConfig = true
     }
-    
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10"
+    }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.10"
     }
    lint {
     disable += "NullSafeMutableLiveData"
-    
+
     warning += "GradleDependency" // Warn about outdated dependencies
     }
-    
+
     // Firebase Crashlytics configuration is controlled through the
     // Firebase Gradle plugin and manifest placeholders
 }
@@ -96,7 +107,7 @@ dependencies {
     implementation(project(":ui"))
     implementation(project(":bookmarks"))
     implementation(project(":ads"))
-    
+
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
@@ -124,7 +135,7 @@ dependencies {
     
     // Coil for image loading
     implementation(libs.coil.compose)
-    
+
     implementation(libs.play.services.ads)
     implementation(project(":voiceinterview"))
     testImplementation(libs.junit)
