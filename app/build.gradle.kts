@@ -11,13 +11,6 @@ plugins {
     id("com.google.firebase.crashlytics")
 }
 
-// Load local.properties for API keys
-val localProperties = Properties().apply {
-    val localPropertiesFile = rootProject.file("local.properties")
-    if (localPropertiesFile.exists()) {
-        load(FileInputStream(localPropertiesFile))
-    }
-}
 
 android {
     namespace = "com.prepstack.techinterviewprep"
@@ -32,9 +25,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
-        // Add OpenAI API key from local.properties to BuildConfig
-        val openaiApiKey = localProperties.getProperty("OPENAI_API_KEY", "YOUR_OPENAI_API_KEY_HERE")
-        buildConfigField("String", "OPENAI_API_KEY", "\"$openaiApiKey\"")
+
     }
     
     signingConfigs {
