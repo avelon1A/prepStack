@@ -1,11 +1,22 @@
 // Remove erroneous import that could be causing build issues
 
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
+}
+
+// Load local.properties for API keys
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        load(FileInputStream(localPropertiesFile))
+    }
 }
 
 android {
@@ -20,6 +31,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Add OpenAI API key from local.properties to BuildConfig
+        val openaiApiKey = localProperties.getProperty("OPENAI_API_KEY", "YOUR_OPENAI_API_KEY_HERE")
+        buildConfigField("String", "OPENAI_API_KEY", "\"$openaiApiKey\"")
     }
     
     signingConfigs {
@@ -66,6 +81,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     
     composeOptions {

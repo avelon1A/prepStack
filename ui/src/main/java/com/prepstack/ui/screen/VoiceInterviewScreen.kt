@@ -72,8 +72,8 @@ fun AppVoiceInterviewScreen(
         )
     } else {
         // Permission granted, show interview screen
-        // TODO: Replace with your own OpenAI API key from https://platform.openai.com/api-keys
-        val apiKey = "YOUR_OPENAI_API_KEY_HERE"
+        // API key is loaded from local.properties file
+        val apiKey = com.prepstack.techinterviewprep.BuildConfig.OPENAI_API_KEY
 
         val viewModel = remember {
             VoiceInterviewViewModel(
