@@ -70,7 +70,7 @@ fun QuestionDetailScreen(
         topBar = {
             EnhancedTopBar(
                 title = "Question Details",
-                gradientColors = listOf(Color(0xFF11998e), Color(0xFF38ef7d)),
+                gradientColors = listOf(Color(0xFF4776E6), Color(0xFF8E54E9)), // Professional purple-blue gradient
                 onBackClick = onBackClick,
                 actions = {
                     if (uiState is QuestionDetailUiState.Success) {
@@ -89,7 +89,7 @@ fun QuestionDetailScreen(
                             Icon(
                                 imageVector = if (isBookmarked) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
                                 contentDescription = "Bookmark",
-                                tint = if (isBookmarked) Color(0xFFFFD700) else Color.White,
+                                tint = if (isBookmarked) Color(0xFFFFD700) else Color.Black,
                                 modifier = Modifier.size(24.dp)
                             )
                         }

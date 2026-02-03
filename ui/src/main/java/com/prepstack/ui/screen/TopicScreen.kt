@@ -48,13 +48,13 @@ fun TopicScreen(
         topBar = {
             EnhancedTopBar(
                 title = "Topics",
-                gradientColors = listOf(Color(0xFFf093fb), Color(0xFFf5576c)),
+                gradientColors = listOf(Color(0xFF396afc), Color(0xFF2948ff)), // Professional blue gradient
                 onBackClick = onBackClick,
                 actions = {
                     TextButton(onClick = { showQuizDialog = true }) {
                         Text(
                             text = "Start Quiz",
-                            color = Color.White,
+                            color = Color.Black,
                             fontWeight = FontWeight.Bold
                         )
                     }

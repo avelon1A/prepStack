@@ -1,12 +1,6 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
     }
@@ -19,11 +13,12 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Tech Interview Prep"
+rootProject.name = "TechInterviewPrep"
 include(":app")
 include(":core")
 include(":domain")
-include(":data")
 include(":ui")
 include(":bookmarks")
+include(":voiceinterview")
+include(":data")
 include(":ads")

@@ -1,0 +1,22 @@
+RIVE ANIMATION FILES LOCATION
+=============================
+
+Place your .riv animation files in this directory.
+
+Example:
+- voice_animation.riv
+- microphone_animation.riv
+- sound_wave.riv
+
+Download free Rive animations from:
+https://rive.app/community/
+
+Or create your own at:
+https://rive.app/editor
+
+After adding your .riv file:
+1. Sync Gradle
+2. Reference it in code as: R.raw.voice_animation
+3. Use VoiceRiveAnimation composable
+
+See RIVE_SETUP.md for complete instructions.

@@ -17,19 +17,39 @@ class QuestionListViewModel(
     private val _uiState = MutableStateFlow<QuestionListUiState>(QuestionListUiState.Loading)
     val uiState: StateFlow<QuestionListUiState> = _uiState.asStateFlow()
     
+    private var currentTopicId: String? = null
+    
     fun loadQuestions(topicId: String) {
+        // Avoid reloading if same topic
+        if (currentTopicId == topicId) return
+        currentTopicId = topicId
+        
         viewModelScope.launch {
-            getQuestionsUseCase(topicId).collect { resource ->
-                _uiState.value = when (resource) {
-                    is Resource.Loading -> QuestionListUiState.Loading
-                    is Resource.Success -> {
-                        resource.data?.let {
-                            QuestionListUiState.Success(it)
-                        } ?: QuestionListUiState.Error("No questions available")
+            getQuestionsUseCase(topicId).collect { questionResource ->
+                when (questionResource) {
+                    is Resource.Loading -> {
+                        _uiState.value = QuestionListUiState.Loading
                     }
-                    is Resource.Error -> QuestionListUiState.Error(
-                        resource.message ?: "An unexpected error occurred"
-                    )
+                    is Resource.Success -> {
+                        questionResource.data?.let { questions ->
+                            // Load initial bookmark status
+                            val bookmarks = bookmarkRepository.getAllBookmarks().first()
+                            val bookmarkedIds = bookmarks.map { it.questionId }.toSet()
+                            
+                            val enrichedQuestions = questions.map { question ->
+                                question.copy(isBookmarked = bookmarkedIds.contains(question.id))
+                            }
+                            
+                            _uiState.value = QuestionListUiState.Success(enrichedQuestions)
+                        } ?: run {
+                            _uiState.value = QuestionListUiState.Error("No questions available")
+                        }
+                    }
+                    is Resource.Error -> {
+                        _uiState.value = QuestionListUiState.Error(
+                            questionResource.message ?: "An unexpected error occurred"
+                        )
+                    }
                 }
             }
         }
@@ -37,7 +57,25 @@ class QuestionListViewModel(
     
     fun toggleBookmark(questionId: String, topicId: String, domainId: String) {
         viewModelScope.launch {
-            bookmarkRepository.toggleBookmark(questionId, topicId, domainId)
+            // Find the question to toggle
+            val currentState = _uiState.value
+            if (currentState is QuestionListUiState.Success) {
+                val question = currentState.questions.find { it.id == questionId }
+                if (question != null) {
+                    // Toggle the bookmark in database with full question data
+                    bookmarkRepository.toggleBookmark(question)
+                    
+                    // Immediately update the UI state to reflect the change
+                    val updatedQuestions = currentState.questions.map { q ->
+                        if (q.id == questionId) {
+                            q.copy(isBookmarked = !q.isBookmarked)
+                        } else {
+                            q
+                        }
+                    }
+                    _uiState.value = QuestionListUiState.Success(updatedQuestions)
+                }
+            }
         }
     }
     

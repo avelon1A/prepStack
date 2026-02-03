@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 /**
- * Enhanced Top App Bar with gradient background and modern design
+ * Enhanced Top App Bar with neutral white design
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -25,18 +25,14 @@ fun EnhancedTopBar(
     onBackClick: (() -> Unit)? = null,
     actions: @Composable RowScope.() -> Unit = {}
 ) {
-    val gradientColors = listOf(
-        Color(0xFF667eea),
-        Color(0xFF764ba2)
-    )
-    
+    // Clean white top bar with black text
     TopAppBar(
         title = {
             Text(
                 text = title,
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
-                color = Color.White,
+                color = Color.Black,
                 fontSize = 20.sp
             )
         },
@@ -46,27 +42,24 @@ fun EnhancedTopBar(
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = "Back",
-                        tint = Color.White
+                        tint = Color.Black
                     )
                 }
             }
         },
         actions = actions,
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color.Transparent
-        ),
-        modifier = Modifier.background(
-            brush = Brush.linearGradient(
-                colors = gradientColors,
-                start = Offset(0f, 0f),
-                end = Offset(1000f, 0f)
-            )
+            containerColor = Color.White,
+            titleContentColor = Color.Black,
+            navigationIconContentColor = Color.Black,
+            actionIconContentColor = Color.Black
         )
     )
 }
 
 /**
- * Enhanced Top App Bar with custom gradient colors
+ * Enhanced Top App Bar with custom colors
+ * This overload maintains backward compatibility for screens that still want color customization
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -76,13 +69,14 @@ fun EnhancedTopBar(
     onBackClick: (() -> Unit)? = null,
     actions: @Composable RowScope.() -> Unit = {}
 ) {
+    // Default to clean white design (ignoring gradient colors)
     TopAppBar(
         title = {
             Text(
                 text = title,
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
-                color = Color.White,
+                color = Color.Black,
                 fontSize = 20.sp
             )
         },
@@ -92,21 +86,17 @@ fun EnhancedTopBar(
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = "Back",
-                        tint = Color.White
+                        tint = Color.Black
                     )
                 }
             }
         },
         actions = actions,
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color.Transparent
-        ),
-        modifier = Modifier.background(
-            brush = Brush.linearGradient(
-                colors = gradientColors,
-                start = Offset(0f, 0f),
-                end = Offset(1000f, 0f)
-            )
+            containerColor = Color.White,
+            titleContentColor = Color.Black,
+            navigationIconContentColor = Color.Black,
+            actionIconContentColor = Color.Black
         )
     )
 }

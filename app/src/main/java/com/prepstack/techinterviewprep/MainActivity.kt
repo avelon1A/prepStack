@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.compose.rememberNavController
 import com.prepstack.techinterviewprep.ui.theme.TechInterviewPrepTheme
 import com.prepstack.ui.navigation.NavGraph
+import com.prepstack.ui.viewmodel.BookmarkViewModel
 import com.prepstack.ui.viewmodel.DomainViewModel
 import com.prepstack.ui.viewmodel.HomeViewModel
 import com.prepstack.ui.viewmodel.QuestionDetailViewModel
@@ -46,6 +47,9 @@ class MainActivity : ComponentActivity() {
             app.bookmarkRepository
         )
         val quizViewModel = QuizViewModel(app.interviewRepository)
+        val bookmarkViewModel = BookmarkViewModel(
+            app.bookmarkRepository
+        )
         
         setContent {
             TechInterviewPrepTheme {
@@ -59,6 +63,7 @@ class MainActivity : ComponentActivity() {
                     questionListViewModel = questionListViewModel,
                     questionDetailViewModel = questionDetailViewModel,
                     quizViewModel = quizViewModel,
+                    bookmarkViewModel = bookmarkViewModel,
                     userProgressRepository = app.userProgressRepository
                 )
             }
