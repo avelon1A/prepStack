@@ -7,42 +7,40 @@ import android.provider.Settings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Mic
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
-import android.content.pm.PackageManager
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.google.accompanist.permissions.isGranted
+import com.google.accompanist.permissions.rememberPermissionState
+import com.google.accompanist.permissions.shouldShowRationale
 import com.prepstack.voiceinterview.ui.VoiceInterviewScreen
 import com.prepstack.voiceinterview.ui.VoiceInterviewViewModel
 
 /**
- * Wrapper for the Voice Interview Screen in the main app.
- * This screen integrates the Voice Interview SDK into the app.
+ * Wrapper screen for Voice Interview that handles permission requests
  */
+@OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun AppVoiceInterviewScreen(
     onBackClick: () -> Unit
 ) {
     val context = LocalContext.current
-    var hasPermission by remember {
-        mutableStateOf(
-            ContextCompat.checkSelfPermission(
-                context,
-                Manifest.permission.RECORD_AUDIO
-            ) == PackageManager.PERMISSION_GRANTED
-        )
-    }
+    val micPermissionState = rememberPermissionState(Manifest.permission.RECORD_AUDIO)
+    
+    var hasPermission by remember { mutableStateOf(micPermissionState.status.isGranted) }
     var showRationale by remember { mutableStateOf(false) }
     
-    // Permission launcher
     val permissionLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.RequestPermission()
+        ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         hasPermission = isGranted
         if (!isGranted) {
@@ -50,17 +48,17 @@ fun AppVoiceInterviewScreen(
         }
     }
     
-    // Check and request permission on first composition
+    // Check permission on first composition
     LaunchedEffect(Unit) {
         if (!hasPermission) {
             permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
         }
     }
     
-    if (!hasPermission) {
-        // Show permission request screen
+    // Show permission request screen if needed
+    if (!hasPermission && showRationale) {
         PermissionRequestScreen(
-            showRationale = showRationale,
+            showRationale = micPermissionState.status.shouldShowRationale,
             onRequestPermission = {
                 permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
             },
@@ -74,7 +72,7 @@ fun AppVoiceInterviewScreen(
         )
     } else {
         // Permission granted, show interview screen
-        // TODO: Replace with your own OpenAI API key
+        // TODO: Replace with your own OpenAI API key from https://platform.openai.com/api-keys
         val apiKey = "YOUR_OPENAI_API_KEY_HERE"
 
         val viewModel = remember {
@@ -102,13 +100,10 @@ private fun PermissionRequestScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Voice Interview") },
+                title = { Text("Microphone Permission Required") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(
-                            imageVector = Icons.Default.Mic,
-                            contentDescription = "Back"
-                        )
+                        Icon(Icons.Default.ArrowBack, "Back")
                     }
                 }
             )
@@ -134,6 +129,7 @@ private fun PermissionRequestScreen(
             Text(
                 text = "Microphone Permission Required",
                 style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center
             )
             
@@ -141,13 +137,11 @@ private fun PermissionRequestScreen(
             
             Text(
                 text = if (showRationale) {
-                    "Voice Interview needs microphone access to listen to your answers. " +
-                    "Please grant the permission in app settings to use this feature."
+                    "Voice Interview needs microphone access to record and evaluate your spoken answers. Please grant the permission in Settings."
                 } else {
-                    "Voice Interview uses your microphone to record and evaluate your spoken answers. " +
-                    "This helps you practice technical interviews naturally through conversation."
+                    "Voice Interview uses your microphone to record and evaluate your spoken answers during the interview."
                 },
-                style = MaterialTheme.typography.bodyMedium,
+                style = MaterialTheme.typography.bodyLarge,
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -159,8 +153,11 @@ private fun PermissionRequestScreen(
                     onClick = onOpenSettings,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(56.dp)
+                        .height(56.dp),
+                    shape = RoundedCornerShape(16.dp)
                 ) {
+                    Icon(Icons.Default.Settings, contentDescription = null)
+                    Spacer(modifier = Modifier.width(8.dp))
                     Text("Open Settings")
                 }
                 
@@ -170,7 +167,8 @@ private fun PermissionRequestScreen(
                     onClick = onBack,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(56.dp)
+                        .height(56.dp),
+                    shape = RoundedCornerShape(16.dp)
                 ) {
                     Text("Go Back")
                 }
@@ -179,14 +177,20 @@ private fun PermissionRequestScreen(
                     onClick = onRequestPermission,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(56.dp)
+                        .height(56.dp),
+                    shape = RoundedCornerShape(16.dp)
                 ) {
+                    Icon(Icons.Default.Mic, contentDescription = null)
+                    Spacer(modifier = Modifier.width(8.dp))
                     Text("Grant Permission")
                 }
                 
                 Spacer(modifier = Modifier.height(12.dp))
                 
-                TextButton(onClick = onBack) {
+                TextButton(
+                    onClick = onBack,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
                     Text("Maybe Later")
                 }
             }
