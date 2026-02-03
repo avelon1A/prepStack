@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 12+ theme - No splash screen -->
+    <style name="Theme.TechInterviewPrep" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Disable splash screen animation -->
+        <item name="android:windowSplashScreenAnimationDuration">0</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@null</item>
+    </style>
+</resources>
