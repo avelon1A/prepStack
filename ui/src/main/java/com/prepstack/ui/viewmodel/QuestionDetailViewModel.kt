@@ -35,8 +35,12 @@ class QuestionDetailViewModel(
                 _uiState.value = when (resource) {
                     is Resource.Loading -> QuestionDetailUiState.Loading
                     is Resource.Success -> {
-                        resource.data?.let {
-                            QuestionDetailUiState.Success(it)
+                        resource.data?.let { question ->
+                            // Check bookmark status
+                            val isBookmarked = bookmarkRepository.isBookmarked(questionId).first()
+                            QuestionDetailUiState.Success(
+                                question.copy(isBookmarked = isBookmarked)
+                            )
                         } ?: QuestionDetailUiState.Error("Question not found")
                     }
                     is Resource.Error -> QuestionDetailUiState.Error(
@@ -62,7 +66,21 @@ class QuestionDetailViewModel(
     
     fun toggleBookmark(questionId: String, topicId: String, domainId: String) {
         viewModelScope.launch {
-            bookmarkRepository.toggleBookmark(questionId, topicId, domainId)
+            // Get the current question
+            val currentState = _uiState.value
+            if (currentState is QuestionDetailUiState.Success) {
+                // Get the question to toggle with full data
+                val question = currentState.question
+                
+                // Toggle the bookmark in database with full question data
+                bookmarkRepository.toggleBookmark(question)
+                
+                // Immediately update the UI state to reflect the change
+                val updatedQuestion = question.copy(
+                    isBookmarked = !question.isBookmarked
+                )
+                _uiState.value = QuestionDetailUiState.Success(updatedQuestion)
+            }
         }
     }
     

@@ -209,12 +209,12 @@ fun SectionHeader(title: String, iconUrl: String) {
         AsyncImage(
             model = iconUrl,
             contentDescription = null,
-            modifier = Modifier.size(28.dp)
+            modifier = Modifier.size(24.dp)  // Smaller icon
         )
         Text(
             text = title,
-            style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Bold
+            style = MaterialTheme.typography.titleMedium,  // Smaller than original
+            fontWeight = FontWeight.SemiBold  // Less heavy weight
         )
     }
 }
@@ -228,15 +228,15 @@ fun RecentActivityItem(
     Column {
         Text(
             text = title,
-            style = MaterialTheme.typography.titleSmall,
-            fontWeight = FontWeight.SemiBold
+            style = MaterialTheme.typography.labelMedium,  // Very small text
+            fontWeight = FontWeight.Medium
         )
         Text(
             text = subtitle,
-            style = MaterialTheme.typography.bodySmall,
+            style = MaterialTheme.typography.labelSmall,  // Smallest text
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
-        Spacer(modifier = Modifier.height(4.dp))
+        Spacer(modifier = Modifier.height(2.dp))  // Less spacing
         LinearProgressIndicator(
             progress = progress,
             modifier = Modifier.fillMaxWidth()
@@ -258,18 +258,18 @@ fun RecentActivityItemClickable(
         ) {
             Text(
                 text = activity.topicName,
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.SemiBold
+                style = MaterialTheme.typography.labelMedium,  // Very small text
+                fontWeight = FontWeight.Medium
             )
             Text(
                 text = DateUtils.getRelativeTime(activity.timestamp),
-                style = MaterialTheme.typography.bodySmall,
+                style = MaterialTheme.typography.labelSmall,  // Smallest text
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
         Text(
             text = "Completed ${activity.questionsCompleted}/${activity.totalQuestions} questions",
-            style = MaterialTheme.typography.bodySmall,
+            style = MaterialTheme.typography.labelSmall,  // Smallest text
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
         Spacer(modifier = Modifier.height(4.dp))
@@ -301,31 +301,43 @@ fun IncompleteTestCard(
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
                         text = test.domainName + if (test.topicName != null) " - ${test.topicName}" else "",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
+                        style = MaterialTheme.typography.labelMedium,  // Very small
+                        fontWeight = FontWeight.Medium
                     )
+                    Spacer(modifier = Modifier.height(2.dp))  // Less space
                     Text(
                         text = "${test.questionsCompleted}/${test.totalQuestions} questions completed",
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.labelSmall,  // Smallest text
+                        fontWeight = FontWeight.Normal
                     )
                     Text(
                         text = DateUtils.getRelativeTime(test.timestamp),
-                        style = MaterialTheme.typography.bodySmall,
+                        style = MaterialTheme.typography.labelSmall,  // Smallest text
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
-                IconButton(onClick = onDeleteClick) {
-                    Text("✕", style = MaterialTheme.typography.titleMedium)
+                IconButton(
+                    onClick = onDeleteClick,
+                    modifier = Modifier.size(24.dp)  // Smaller button
+                ) {
+                    Text("✕", style = MaterialTheme.typography.labelMedium)  // Smaller text
                 }
             }
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(4.dp))  // Less space
             LinearProgressIndicator(
                 progress = test.progress,
                 modifier = Modifier.fillMaxWidth()
             )
-            Spacer(modifier = Modifier.height(8.dp))
-            TextButton(onClick = onResumeClick) {
-                Text("Resume Test")
+            Spacer(modifier = Modifier.height(4.dp))  // Less space
+            TextButton(
+                onClick = onResumeClick,
+                modifier = Modifier.align(Alignment.End)
+            ) {
+                Text(
+                    "Resume Test", 
+                    style = MaterialTheme.typography.labelSmall,  // Smallest text
+                    fontWeight = FontWeight.Medium
+                )
             }
         }
     }
@@ -344,20 +356,21 @@ fun PerformanceCard(
         )
     ) {
         Column(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(12.dp),  // Smaller padding
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 text = value,
-                style = MaterialTheme.typography.headlineMedium,
-                fontWeight = FontWeight.Bold,
+                style = MaterialTheme.typography.titleMedium,  // Much smaller than original
+                fontWeight = FontWeight.SemiBold,
                 color = MaterialTheme.colorScheme.primary
             )
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(2.dp))  // Less spacing
             Text(
                 text = title,
-                style = MaterialTheme.typography.bodySmall,
-                fontWeight = FontWeight.Medium
+                style = MaterialTheme.typography.labelSmall,  // Very small text
+                fontWeight = FontWeight.Normal,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center  // Center-aligned text
             )
         }
     }
@@ -431,8 +444,8 @@ fun DomainCompactCard(
                 ) {
                     Text(
                         text = domain.name,
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold,
+                        style = MaterialTheme.typography.labelLarge,  // Smaller than original
+                        fontWeight = FontWeight.Medium,
                         maxLines = 1,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -448,12 +461,12 @@ fun DomainCompactCard(
                         ) {
                             Text(
                                 text = "${domain.topicCount} topics",
-                                style = MaterialTheme.typography.labelMedium,
+                                style = MaterialTheme.typography.labelSmall,  // Smallest text
                                 fontWeight = FontWeight.Medium,
                                 color = MaterialTheme.colorScheme.onPrimary,
                                 modifier = Modifier.padding(
-                                    horizontal = 12.dp,
-                                    vertical = 6.dp
+                                    horizontal = 10.dp,
+                                    vertical = 4.dp
                                 )
                             )
                         }

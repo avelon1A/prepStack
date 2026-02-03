@@ -12,6 +12,7 @@ import com.prepstack.domain.model.QuizDescriptor
 import com.prepstack.domain.model.QuizHistory
 import com.prepstack.domain.repository.UserProgressRepository
 import com.prepstack.ui.screen.*
+import com.prepstack.ui.viewmodel.BookmarkViewModel
 import com.prepstack.ui.viewmodel.DomainViewModel
 import com.prepstack.ui.viewmodel.HomeViewModel
 import com.prepstack.ui.viewmodel.QuestionDetailViewModel
@@ -34,6 +35,7 @@ fun NavGraph(
     questionListViewModel: QuestionListViewModel,
     questionDetailViewModel: QuestionDetailViewModel,
     quizViewModel: QuizViewModel,
+    bookmarkViewModel: BookmarkViewModel,
     userProgressRepository: UserProgressRepository,
     startDestination: String = Screen.Main.route
 ) {
@@ -51,6 +53,7 @@ fun NavGraph(
             MainScreen(
                 domainViewModel = domainViewModel,
                 homeViewModel = homeViewModel,
+                bookmarkViewModel = bookmarkViewModel,
                 onDomainClick = { domainId ->
                     // Log domain selection
                     AnalyticsLogger.logDomainSelected(domainId, "domain_from_main")
@@ -72,6 +75,15 @@ fun NavGraph(
                 },
                 onBookmarkNavigate = {
                     navController.navigate(Screen.Bookmark.route)
+                },
+                onQuestionClick = { questionId ->
+                    // Log question click from main screen bookmarks tab
+                    val params = android.os.Bundle().apply {
+                        putString("question_id", questionId)
+                        putString("source", "main_bookmarks_tab")
+                    }
+                    AnalyticsLogger.logEvent("question_clicked", params)
+                    navController.navigate(Screen.QuestionDetail.createRoute(questionId))
                 }
             )
         }
@@ -355,19 +367,47 @@ fun NavGraph(
         }
         
         // Bookmark Screen
-        composable(route = Screen.Bookmark.route) {
-            // Log screen view
-            LaunchedEffect(Unit) {
-                AnalyticsLogger.logScreenView("bookmark_screen")
-            }
-            
-            BookmarkScreen(
-                onBackClick = { 
-                    // Log navigation back from bookmarks
-                    AnalyticsLogger.logEvent("bookmark_exit")
-                    navController.navigateUp() 
-                }
-            )
+    composable(route = Screen.Bookmark.route) {
+        // Log screen view
+        LaunchedEffect(Unit) {
+            AnalyticsLogger.logScreenView("bookmark_screen")
         }
+        
+        BookmarkScreen(
+            viewModel = bookmarkViewModel,
+            onQuestionClick = { questionId ->
+                // Log bookmarked question click
+                val params = android.os.Bundle().apply {
+                    putString("question_id", questionId)
+                    putString("source", "bookmark_screen")
+                }
+                AnalyticsLogger.logEvent("bookmarked_question_clicked", params)
+                navController.navigate(Screen.QuestionDetail.createRoute(questionId))
+            },
+            onBackClick = {
+                // Log navigation back from bookmarks
+                AnalyticsLogger.logEvent("bookmark_exit")
+                // Pop back stack to return to previous screen
+                navController.popBackStack()
+            }
+        )
+    }
+    
+    // Voice Interview Screen
+    composable(route = Screen.VoiceInterview.route) {
+        // Log screen view
+        LaunchedEffect(Unit) {
+            AnalyticsLogger.logScreenView("voice_interview_screen")
+        }
+        
+        AppVoiceInterviewScreen(
+            onBackClick = {
+                // Log navigation back from voice interview
+                AnalyticsLogger.logEvent("voice_interview_exit")
+                // Pop back stack to return to previous screen
+                navController.popBackStack()
+            }
+        )
+    }
     }
 }

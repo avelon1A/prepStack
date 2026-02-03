@@ -28,6 +28,12 @@ sealed class BottomNavItem(
         iconUrl = Constants.IconUrls.BOOKMARK
     )
     
+    data object VoiceInterview : BottomNavItem(
+        route = "voice_interview",
+        title = "Voice Interview",
+        iconUrl = "https://img.icons8.com/color/96/microphone.png"
+    )
+    
     data object Profile : BottomNavItem(
         route = "profile",
         title = "Profile",
@@ -39,5 +45,6 @@ fun getAllBottomNavItems() = listOf(
     BottomNavItem.Home,
 //    BottomNavItem.Progress,
     BottomNavItem.Bookmarks,
+    BottomNavItem.VoiceInterview,
 //    BottomNavItem.Profile
 )

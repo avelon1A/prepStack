@@ -63,7 +63,7 @@ fun QuestionListScreen(
                         Icon(
                             imageVector = Icons.Default.FilterList,
                             contentDescription = "Filter",
-                            tint = Color.White
+                            tint = Color.Black
                         )
                     }
                     DropdownMenu(
@@ -113,7 +113,7 @@ fun QuestionListScreen(
                         Icon(
                             imageVector = Icons.Default.Sort,
                             contentDescription = "Sort",
-                            tint = Color.White
+                            tint = Color.Black
                         )
                     }
                     DropdownMenu(

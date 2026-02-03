@@ -30,4 +30,5 @@ sealed class Screen(val route: String) {
         }
     }
     data object Bookmark : Screen("bookmark")
+    data object VoiceInterview : Screen("voice_interview")
 }

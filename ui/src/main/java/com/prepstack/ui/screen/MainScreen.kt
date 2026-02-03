@@ -23,6 +23,7 @@ import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import com.prepstack.ui.navigation.BottomNavItem
 import com.prepstack.ui.navigation.getAllBottomNavItems
+import com.prepstack.ui.viewmodel.BookmarkViewModel
 import com.prepstack.ui.viewmodel.DomainUiState
 import com.prepstack.ui.viewmodel.DomainViewModel
 import com.prepstack.ui.viewmodel.HomeViewModel
@@ -34,10 +35,12 @@ import com.prepstack.ui.viewmodel.HomeViewModel
 fun MainScreen(
     domainViewModel: DomainViewModel,
     homeViewModel: HomeViewModel,
+    bookmarkViewModel: BookmarkViewModel,
     onDomainClick: (String) -> Unit,
     onTopicClick: (String) -> Unit,
     onResumeTest: (String) -> Unit,
-    onBookmarkNavigate: () -> Unit
+    onBookmarkNavigate: () -> Unit,
+    onQuestionClick: (String) -> Unit
 ) {
     val navController = rememberNavController()
     val domainUiState by domainViewModel.uiState.collectAsState()
@@ -83,7 +86,17 @@ fun MainScreen(
 //            }
             
             composable(BottomNavItem.Bookmarks.route) {
-                BookmarkScreen(onBackClick = { })
+                BookmarkScreen(
+                    viewModel = bookmarkViewModel,
+                    onQuestionClick = onQuestionClick,
+                    onBackClick = { /* In tab navigation, back is handled by tab switching */ }
+                )
+            }
+            
+            composable(BottomNavItem.VoiceInterview.route) {
+                AppVoiceInterviewScreen(
+                    onBackClick = { navController.popBackStack() }
+                )
             }
             
             composable(BottomNavItem.Profile.route) {
